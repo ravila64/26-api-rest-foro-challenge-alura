@@ -1,12 +1,22 @@
 package com.api.challenge.foro.domain.usuario;
 
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
 import java.util.List;
-
+@Table(name = "usuarios")
+@Entity(name = "Usuario")
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+@EqualsAndHashCode(of = "id")
 public class Usuario implements UserDetails {
 
    @Id
@@ -22,12 +32,12 @@ public class Usuario implements UserDetails {
 
    @Override
    public String getPassword() {
-      return true;
+      return clave;
    }
 
    @Override
    public String getUsername() {
-      return true;
+      return login;
    }
 
    @Override
@@ -42,11 +52,11 @@ public class Usuario implements UserDetails {
 
    @Override
    public boolean isCredentialsNonExpired() {
-      return UserDetails.super.isCredentialsNonExpired();
+      return true; //UserDetails.super.isCredentialsNonExpired();
    }
 
    @Override
    public boolean isEnabled() {
-      return UserDetails.super.isEnabled();
+      return true; //UserDetails.super.isEnabled();
    }
 }
