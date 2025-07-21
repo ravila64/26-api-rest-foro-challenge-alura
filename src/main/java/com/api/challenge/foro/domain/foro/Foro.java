@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity
+@Entity(name="Foro")
 @Table(name = "foros") // Asegura el nombre de la tabla
 @Getter
 //@NoArgsConstructor
