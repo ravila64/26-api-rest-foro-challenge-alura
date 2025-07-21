@@ -1,6 +1,5 @@
 package com.api.challenge.foro.domain.topico;
 
-import com.api.challenge.foro.domain.foro.Foro;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;

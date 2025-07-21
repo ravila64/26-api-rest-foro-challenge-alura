@@ -1,8 +1,8 @@
 package com.api.challenge.foro.domain;
 
 // se cambio Throwable por RuntimeException
-public class ValidationException extends RuntimeException {
-   public ValidationException(String mensaje) {
+public class ValidacionException extends RuntimeException {
+   public ValidacionException(String mensaje) {
       super(mensaje);
    }
 }

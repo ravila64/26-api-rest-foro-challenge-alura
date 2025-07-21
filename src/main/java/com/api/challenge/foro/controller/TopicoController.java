@@ -14,7 +14,7 @@ import java.net.URI;
 
 @RestController
 @RequestMapping("/topicos")
-//@SecurityRequirement(name = "bearer-key")
+//@SecurityRequirement(name = "bearer-key") no se maneja SWAGGER
 public class TopicoController {
    @Autowired
    private TopicoRepository topicoRepository;
