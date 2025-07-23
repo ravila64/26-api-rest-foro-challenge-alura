@@ -21,6 +21,7 @@ public class TopicoController {
 
    // registrar o insertar topicos
    @PostMapping
+   @Transactional
    public ResponseEntity<DatosRespuestaTopico> registrarTopico(
          @RequestBody @Valid DatosRegistroTopico datosRegistroTopico,
          UriComponentsBuilder uriComponentsBuilder) {

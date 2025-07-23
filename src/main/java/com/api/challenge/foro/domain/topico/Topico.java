@@ -1,5 +1,6 @@
 package com.api.challenge.foro.domain.topico;
 
+import com.api.challenge.foro.domain.usuario.Usuario;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -19,8 +20,10 @@ public class Topico {
     private String mensaje;
     private String curso;
     private String titulo;
-    private Long usuario_id;
     private Boolean activo;
+    @ManyToOne
+    @JoinColumn(name = "usuario_id")
+    private Usuario usuario;
 
     public Topico(DatosRegistroTopico datosRegistroTopico) {
         this.activo = true;

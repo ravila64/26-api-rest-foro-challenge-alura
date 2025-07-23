@@ -1,8 +1,6 @@
 package com.api.challenge.foro.domain.topico;
 
-import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Pattern;
 
 public record DatosRegistroTopico(
         @NotBlank
