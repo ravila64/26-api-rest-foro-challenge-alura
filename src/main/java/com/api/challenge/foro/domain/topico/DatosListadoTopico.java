@@ -1,8 +1,10 @@
 package com.api.challenge.foro.domain.topico;
 
 
-public record DatosListadoTopico(Long id, String mensaje, String curso, String titulo){
+import java.time.LocalDateTime;
+
+public record DatosListadoTopico(Long id, String titulo, String mensaje, String curso, LocalDateTime fecha){
    public DatosListadoTopico(Topico topico){
-      this(topico.getId(),topico.getMensaje(), topico.getCurso(), topico.getTitulo());
+      this(topico.getId(), topico.getTitulo(),topico.getMensaje(), topico.getCurso(), topico.getFecha());
    }
 }

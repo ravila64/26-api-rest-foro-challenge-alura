@@ -6,12 +6,12 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
 public interface TopicoRepository extends JpaRepository<Topico, Long> {
-    Page<Topico> findByActivoTrue(Pageable paginacion);
+    Page<Topico> findByStatusTrue(Pageable paginacion);
 
     @Query("""
-            select t.activo from Topico t
+            select t.status from Topico t
             where t.id = :idTopico
             """)
-    boolean findActivoById(Long idTopico);
+    boolean findStatusById(Long idTopico);
 
 }

@@ -1,4 +1,4 @@
-package com.api.challenge.foro.domain.usuario;
+package com.api.challenge.foro.domain.usuarios;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -11,17 +11,18 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
 import java.util.List;
-@Table(name = "usuarios")
-@Entity(name = "Usuario")
+@Table(name = "autores")
+@Entity(name = "Autor")
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
-public class Usuario implements UserDetails {
+public class Autor implements UserDetails {
 
    @Id
    @GeneratedValue(strategy = GenerationType.IDENTITY)
    private Long id;
+   private String nombre;
    private String login;
    private String clave;
 
@@ -59,4 +60,5 @@ public class Usuario implements UserDetails {
    public boolean isEnabled() {
       return true; //UserDetails.super.isEnabled();
    }
+
 }

@@ -1,6 +1,6 @@
 package com.api.challenge.foro.infrastructure.security;
 
-import com.api.challenge.foro.domain.usuario.UsuarioRepository;
+import com.api.challenge.foro.domain.usuarios.UsuarioRepository;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +11,7 @@ import org.springframework.web.filter.OncePerRequestFilter;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
-import org.springframework.security.authentication.UserDetailsRepositoryReactiveAuthenticationManager;
+
 import java.io.IOException;
 
 @Component

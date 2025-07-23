@@ -1,6 +1,6 @@
 package com.api.challenge.foro.infrastructure.security;
 
-import com.api.challenge.foro.domain.usuario.Usuario;
+import com.api.challenge.foro.domain.usuarios.Autor;
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.JWTCreationException;

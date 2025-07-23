@@ -1,6 +1,6 @@
 package com.api.challenge.foro.domain.topico;
 
 public record DatosRespuestaTopico(
-      Long id, String mensaje, String curso, String titulo
+      Long id, String titulo, String mensaje, String curso
 ) {
 }

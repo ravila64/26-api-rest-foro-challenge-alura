@@ -1,7 +1,7 @@
 package com.api.challenge.foro.controller;
 
-import com.api.challenge.foro.domain.usuario.DatosAutenticacionUsuario;
-import com.api.challenge.foro.domain.usuario.Usuario;
+import com.api.challenge.foro.domain.usuarios.DatosAutenticacionUsuario;
+import com.api.challenge.foro.domain.usuarios.Autor;
 import com.api.challenge.foro.infrastructure.security.DatosJWTToken;
 import com.api.challenge.foro.infrastructure.security.TokenService;
 import jakarta.validation.Valid;
@@ -29,7 +29,7 @@ public class AutenticacionController {
         Authentication authToken = new UsernamePasswordAuthenticationToken(datosAutenticacionUsuario.login(),
                 datosAutenticacionUsuario.clave());
         var usuarioAutenticado = authenticationManager.authenticate(authToken);
-        var JWTtoken = tokenService.generarToken((Usuario) usuarioAutenticado.getPrincipal());
+        var JWTtoken = tokenService.generarToken((Autor) usuarioAutenticado.getPrincipal());
         return ResponseEntity.ok(new DatosJWTToken(JWTtoken));
     }
 }
