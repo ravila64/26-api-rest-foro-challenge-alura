@@ -1,4 +1,4 @@
-package com.api.challenge.foro.domain.usuarios;
+package com.api.challenge.foro.domain.usuario;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -14,6 +14,6 @@ public class AutenticacionService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        return usuarioRepository.findByLogin(username);
+        return usuarioRepository.findByEmail(username);
     }
 }

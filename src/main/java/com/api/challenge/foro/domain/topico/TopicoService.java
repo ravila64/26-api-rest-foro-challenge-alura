@@ -1,7 +1,7 @@
 package com.api.challenge.foro.domain.topico;
 
 import com.api.challenge.foro.domain.ValidacionException;
-import com.api.challenge.foro.domain.usuarios.UsuarioRepository;
+import com.api.challenge.foro.domain.usuario.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

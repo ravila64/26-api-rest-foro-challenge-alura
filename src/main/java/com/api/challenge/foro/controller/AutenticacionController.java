@@ -1,7 +1,7 @@
 package com.api.challenge.foro.controller;
 
-import com.api.challenge.foro.domain.usuarios.DatosAutenticaUsuario;
-import com.api.challenge.foro.domain.usuarios.Usuario;
+import com.api.challenge.foro.domain.usuario.DatosAutenticaUsuario;
+import com.api.challenge.foro.domain.usuario.Usuario;
 import com.api.challenge.foro.infrastructure.security.DatosJWTToken;
 import com.api.challenge.foro.infrastructure.security.TokenService;
 import jakarta.validation.Valid;

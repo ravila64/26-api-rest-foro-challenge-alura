@@ -1,4 +1,4 @@
-package com.api.challenge.foro.domain.usuarios;
+package com.api.challenge.foro.domain.usuario;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -6,10 +6,8 @@ import jakarta.validation.constraints.NotBlank;
 //UsuarioDTO
 public record DatosAutenticaUsuario(
       @NotBlank
-      String nombre,
-      @NotBlank(message = "Utilizar correo electronico para usuario")
       @Email(message = "Correo Electronico no valido")
       String email,
-      @NotBlank(message = "digite 4 a 15 caracteres")
+      @NotBlank
       String clave)
 {}

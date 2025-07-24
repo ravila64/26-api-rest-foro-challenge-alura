@@ -1,17 +1,14 @@
-package com.api.challenge.foro.domain.usuarios;
+package com.api.challenge.foro.domain.usuario;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
 import java.util.List;
-@Table(name = "usuarios")
+@Table(name = "usuario")
 @Entity(name = "Usuario")
 @Getter
 @NoArgsConstructor
@@ -23,8 +20,10 @@ public class Usuario implements UserDetails {
    @GeneratedValue(strategy = GenerationType.IDENTITY)
    private Long id;
    private String nombre;
-   private String login;
+   @Column(unique = true)
+   private String email;
    private String clave;
+   private Boolean activo;
 
    @Override
    public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -38,27 +37,26 @@ public class Usuario implements UserDetails {
 
    @Override
    public String getUsername() {
-      return login;
+      return email;
    }
 
    @Override
    public boolean isAccountNonExpired() {
-      return true; //UserDetails.super.isAccountNonExpired();
-   }
+      return true;
+   }  //UserDetails.super.isAccountNonExpired()
 
    @Override
    public boolean isAccountNonLocked() {
-      return true; //UserDetails.super.isAccountNonLocked();
-   }
+      return true;
+   } //UserDetails.super.isAccountNonLocked()
 
    @Override
    public boolean isCredentialsNonExpired() {
-      return true; //UserDetails.super.isCredentialsNonExpired();
-   }
+      return true;
+   } //UserDetails.super.isCredentialsNonExpired()
 
    @Override
    public boolean isEnabled() {
-      return true; //UserDetails.super.isEnabled();
-   }
-
+      return true;
+   } //UserDetails.super.isEnabled()
 }

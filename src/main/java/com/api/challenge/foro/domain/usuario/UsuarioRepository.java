@@ -1,8 +1,8 @@
-package com.api.challenge.foro.domain.usuarios;
+package com.api.challenge.foro.domain.usuario;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 
 public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
-    UserDetails findByLogin(String username);
+    UserDetails findByEmail(String username);
 }

@@ -1,8 +1,7 @@
 package com.api.challenge.foro.domain.topico;
 
-import com.api.challenge.foro.domain.usuarios.Usuario;
+import com.api.challenge.foro.domain.usuario.Usuario;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -31,12 +30,7 @@ public class Topico {
    private String curso;
    private boolean activo;
 
-   //Long id, String title, String message, LocalDateTime date, Status status, Usuario usuario, String curso
    public Topico(DatosRegistroTopico datosRegistroTopico) {
-    //this.id = datosRegistroTopico.id();
-//      this.fecha = datosRegistroTopico.fecha();
-//      this.status = datosRegistroTopico.status();
-//      this.autor = datosRegistroTopico.usuario();
       this.titulo = datosRegistroTopico.titulo();
       this.mensaje = datosRegistroTopico.mensaje();
       this.curso = datosRegistroTopico.curso();
@@ -44,14 +38,14 @@ public class Topico {
    }
 
    public Topico(Long id, String title, String message, LocalDateTime date, Status status, Usuario usuario, String curso) {
-      this.id=id;
-      this.titulo=title;
-      this.mensaje=message;
+      this.id = id;
+      this.titulo = title;
+      this.mensaje = message;
       this.fecha = date;
-      this.fecha=LocalDateTime.now();
-      this.status=status;
-      this.autor=usuario;
-      this.curso=curso;
+      this.fecha = LocalDateTime.now();
+      this.status = status;
+      this.autor = usuario;
+      this.curso = curso;
    }
 
    // actualizar datos

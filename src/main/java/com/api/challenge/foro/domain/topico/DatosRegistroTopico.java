@@ -1,6 +1,5 @@
 package com.api.challenge.foro.domain.topico;
 
-import com.api.challenge.foro.domain.usuarios.Usuario;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 

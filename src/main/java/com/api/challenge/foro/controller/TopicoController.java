@@ -1,7 +1,7 @@
 package com.api.challenge.foro.controller;
 
 import com.api.challenge.foro.domain.topico.*;
-import com.api.challenge.foro.domain.usuarios.UsuarioRepository;
+import com.api.challenge.foro.domain.usuario.UsuarioRepository;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;

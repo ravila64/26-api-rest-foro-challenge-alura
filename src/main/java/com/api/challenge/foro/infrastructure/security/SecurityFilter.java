@@ -1,6 +1,6 @@
 package com.api.challenge.foro.infrastructure.security;
 
-import com.api.challenge.foro.domain.usuarios.UsuarioRepository;
+import com.api.challenge.foro.domain.usuario.UsuarioRepository;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,7 +30,7 @@ public class SecurityFilter extends OncePerRequestFilter {
          var nombreUsuario = tokenService.getSubject(token); // extract username
          if (nombreUsuario != null) {
             // Token valido
-            var usuario = usuarioRepository.findByLogin(nombreUsuario);
+            var usuario = usuarioRepository.findByEmail(nombreUsuario);
             var authentication = new UsernamePasswordAuthenticationToken(usuario, null,
                   usuario.getAuthorities()); // Forzamos un inicio de sesion
             SecurityContextHolder.getContext().setAuthentication(authentication);

@@ -1,10 +1,11 @@
 package com.api.challenge.foro.infrastructure.security;
 
-import com.api.challenge.foro.domain.usuarios.Usuario;
+import com.api.challenge.foro.domain.usuario.Usuario;
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.JWTCreationException;
 import com.auth0.jwt.exceptions.JWTVerificationException;
+import jakarta.validation.ValidationException;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import java.time.Instant;
@@ -22,7 +23,7 @@ public class TokenService {
          var algoritmo = Algorithm.HMAC256(secret);
          return JWT.create()
                .withIssuer("API Foro Alura")
-               .withSubject(usuario.getLogin())
+               .withSubject(usuario.getEmail())
                .withExpiresAt(fechaExpiracion())
                .sign(algoritmo);
       } catch (JWTCreationException exception){
@@ -35,6 +36,9 @@ public class TokenService {
    }
 
    public String getSubject(String tokenJWT) {
+      if (tokenJWT == null) {
+         throw new ValidationException("El token es nulo.");
+      }
       try {
          var algoritmo = Algorithm.HMAC256(secret);
          return JWT.require(algoritmo)
@@ -43,7 +47,7 @@ public class TokenService {
                .verify(tokenJWT)
                .getSubject();
       } catch (JWTVerificationException exception){
-         throw new RuntimeException("Token JWT invalido o expirado!");
+         throw new RuntimeException("Token JWT invalido o expirado !!!");
       }
    }
 }
