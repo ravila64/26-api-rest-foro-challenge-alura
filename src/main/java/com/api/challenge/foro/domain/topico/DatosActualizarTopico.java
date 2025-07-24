@@ -11,7 +11,7 @@ public record DatosActualizarTopico(
         String titulo,
         String mensaje,
         Status status,
-        @NotNull long usuario_id,
+        @NotNull Long usuario_id,
         String curso,
         LocalDateTime fecha
 ) {
