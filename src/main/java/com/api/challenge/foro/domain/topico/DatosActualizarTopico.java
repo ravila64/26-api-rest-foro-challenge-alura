@@ -7,11 +7,12 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public record DatosActualizarTopico(
-        @NotNull
-        Long id,
+        @NotNull Long id,
         String titulo,
         String mensaje,
-        String curso
-     //   LocalDateTime fecha,
+        Status status,
+        @NotNull long usuario_id,
+        String curso,
+        LocalDateTime fecha
 ) {
 }
