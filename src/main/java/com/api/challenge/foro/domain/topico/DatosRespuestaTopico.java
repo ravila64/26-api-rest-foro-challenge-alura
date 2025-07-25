@@ -7,7 +7,7 @@ public record DatosRespuestaTopico(
       String titulo,
       String mensaje,
       Status status,
-      Long usuario_id,
+      Long autor_id,
       String curso,
       LocalDateTime fecha
 ) {

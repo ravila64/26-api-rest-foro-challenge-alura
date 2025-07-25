@@ -14,11 +14,11 @@ public record DatosRegistroUsuario(
       @NotBlank(message = "Debe tener entre 6 y 10 digitos.") @Pattern(regexp = "\\d{6,10}")
       String clave
 ) {
-   public Long getId() {
-      return id;
-   }
-   public String getName() {
-      return nombre;
-   }
-   public String getEmail() { return email; }
+//   public Long getId() {
+//      return id;
+//   }
+//   public String getNombre() {
+//      return nombre;
+//   }
+//   public String getEmail() { return email; }
 }

@@ -8,8 +8,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
 import java.util.List;
-@Table(name = "usuario")
 @Entity(name = "Usuario")
+@Table(name = "usuarios")
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
@@ -19,10 +19,16 @@ public class Usuario implements UserDetails {
    @Id
    @GeneratedValue(strategy = GenerationType.IDENTITY)
    private Long id;
+
+   @Column(nullable=false)
    private String nombre;
-   @Column(unique = true)
+
+   @Column(unique = true, nullable = false)
    private String email;
+
+   @Column(nullable=false)
    private String clave;
+
    private Boolean activo;
 
    @Override

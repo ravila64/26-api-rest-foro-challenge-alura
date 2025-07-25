@@ -1,6 +1,7 @@
 package com.api.challenge.foro.domain.topico;
 
 import com.api.challenge.foro.domain.usuario.Usuario;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -21,6 +22,7 @@ public class Topico {
    private Long id;
    private String titulo;
    private String mensaje;
+   @JsonFormat(pattern = "dd-MM-yyyy HH:mm")
    private LocalDateTime fecha;
    @Enumerated(EnumType.STRING)
    private Status status;
