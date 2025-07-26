@@ -13,7 +13,7 @@ public class TopicoService {
    private UsuarioRepository usuarioRepository;
 
    public DatosRespuestaTopico topicoCreado(TopicoDTO topicoDTO){
-      if (!usuarioRepository.findById(topicoDTO.usuario_Id()).isPresent()){
+      if (!usuarioRepository.findById(topicoDTO.autor_id()).isPresent()){
          throw new ValidacionException("ID de usuario no está registrado en la base de datos.");
       }
       var titulo= topicoDTO.titulo();
@@ -24,10 +24,11 @@ public class TopicoService {
       if (mensaje != null && topicoRepository.existsByMensajeIgnoreCase(mensaje)){
          throw new ValidacionException("Este mensaje ya está existe en base de datos. Revisar topicos" );
       }
-      var usuario = usuarioRepository.findById(topicoDTO.usuario_Id()).get();
-      var topicoId= new Topico(null,titulo,mensaje,topicoDTO.fecha(),topicoDTO.status(),usuario,topicoDTO.curso());
-      topicoRepository.save(topicoId);
-      return new DatosRespuestaTopico(topicoId);
+      var usuario = usuarioRepository.findById(topicoDTO.autor_id()).get();
+      var topicoNuevo= new Topico(null, titulo, mensaje, topicoDTO.fecha(),
+                        topicoDTO.status(), usuario,topicoDTO.curso());
+      topicoRepository.save(topicoNuevo);
+      return new DatosRespuestaTopico(topicoNuevo);
    }
 
 }

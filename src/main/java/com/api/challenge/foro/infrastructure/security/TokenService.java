@@ -8,6 +8,7 @@ import com.auth0.jwt.exceptions.JWTVerificationException;
 import jakarta.validation.ValidationException;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+
 import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
@@ -16,23 +17,24 @@ import java.time.ZoneOffset;
 @Service
 public class TokenService {
    @Value("${api.security.token.secret}")
-   private String secret;
+   private String secret;  // properties
 
    public String generarToken(Usuario usuario) {
       try {
          var algoritmo = Algorithm.HMAC256(secret);
          return JWT.create()
-               .withIssuer("API Foro Alura")
+               .withIssuer("API Voll.med")
                .withSubject(usuario.getEmail())
                .withExpiresAt(fechaExpiracion())
                .sign(algoritmo);
-      } catch (JWTCreationException exception){
+      } catch (JWTCreationException exception) {
          throw new RuntimeException("error al generar el token JWT", exception);
       }
    }
 
+//    example:expira 3 horas despues desde que se reciba el token
    private Instant fechaExpiracion() {
-      return LocalDateTime.now().plusHours(4).toInstant(ZoneOffset.of("-05:00"));
+      return LocalDateTime.now().plusHours(3).toInstant(ZoneOffset.of("-05:00"));  // utc:-05:00 colombia, bog, lima, quito
    }
 
    public String getSubject(String tokenJWT) {
@@ -42,12 +44,12 @@ public class TokenService {
       try {
          var algoritmo = Algorithm.HMAC256(secret);
          return JWT.require(algoritmo)
-               .withIssuer("API foro Alura")
+               .withIssuer("API Voll.med")
                .build()
                .verify(tokenJWT)
                .getSubject();
-      } catch (JWTVerificationException exception){
-         throw new RuntimeException("Token JWT invalido o expirado !!!");
+      } catch (JWTVerificationException exception) {
+         throw new RuntimeException("Token JWT invalido o expirado !!! "+exception.getMessage());
       }
    }
 }

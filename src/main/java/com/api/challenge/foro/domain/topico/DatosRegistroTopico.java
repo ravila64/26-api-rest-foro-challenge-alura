@@ -1,23 +1,26 @@
 package com.api.challenge.foro.domain.topico;
 
+import com.api.challenge.foro.domain.usuario.Usuario;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
+import java.time.LocalDateTime;
+
 // Long id, String title, String message, LocalDateTime date, Status status, Usuario usuario, String curso
 public record DatosRegistroTopico(
-        @NotBlank(message = "Titulo obligatorio")
-        String titulo,
-        @NotBlank(message = "Mensaje obligatorio")
-        String mensaje,
-        @NotBlank(message = "Curso obligatorio")
-        String curso,
-        @NotNull(message = "Colocar id usuario existente ")
-        Long autor_id
+      @NotBlank(message = "{titulo.obl}")
+      String titulo,
+      @NotBlank(message = "{mensaje.obl}")
+      String mensaje,
+      @NotBlank(message = "{fecha.obl}")
+      LocalDateTime fecha,
+      @NotNull(message = "{status.obl}")
+      Status status,
+      @NotBlank(message = "{curso.obl}")
+      String curso,
+      @NotNull(message = "{autor.obl}")
+      Usuario autor,
+      @NotBlank(message = "{activo.obl}")
+      Boolean activo
 ) {
-        public DatosRegistroTopico(String titulo, String mensaje, String curso, Long autor_id) {
-                this.titulo = titulo;
-                this.mensaje = mensaje;
-                this.curso = curso;
-                this.autor_id = autor_id;
-        }
 }

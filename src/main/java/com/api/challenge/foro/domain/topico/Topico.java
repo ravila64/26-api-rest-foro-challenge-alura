@@ -3,6 +3,7 @@ package com.api.challenge.foro.domain.topico;
 import com.api.challenge.foro.domain.usuario.Usuario;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -22,8 +23,7 @@ public class Topico {
    private Long id;
    private String titulo;
    private String mensaje;
-   @JsonFormat(pattern = "dd-MM-yyyy HH:mm")
-   private LocalDateTime fecha;
+   private LocalDateTime fecha;  // "yyyy-MM-ddTHH:mm"
    @Enumerated(EnumType.STRING)
    private Status status;
    @ManyToOne
@@ -32,21 +32,27 @@ public class Topico {
    private String curso;
    private boolean activo;
 
-   public Topico(DatosRegistroTopico datosRegistroTopico) {
-      this.titulo = datosRegistroTopico.titulo();
-      this.mensaje = datosRegistroTopico.mensaje();
-      this.curso = datosRegistroTopico.curso();
+   public Topico(DatosRegistroTopico datos) {
+      this.id = null;
+      this.titulo = datos.titulo();
+      this.mensaje = datos.mensaje();
+      this.fecha = LocalDateTime.now();
+      this.status = datos.status();
+      this.autor = datos.autor();
+      this.curso = datos.curso();
       this.activo = true;
    }
 
-   public Topico(Long id, String title, String message, LocalDateTime date, Status status, Usuario usuario, String curso) {
+   public Topico(Long id, String titulo, String mensaje,
+                 LocalDateTime fecha, Status status, Usuario autor,
+                 String curso)
+   {
       this.id = id;
-      this.titulo = title;
-      this.mensaje = message;
-      this.fecha = date;
-      this.fecha = LocalDateTime.now();
+      this.titulo = titulo;
+      this.mensaje = mensaje;
+      this.fecha = fecha;
       this.status = status;
-      this.autor = usuario;
+      this.autor = autor;
       this.curso = curso;
    }
 
