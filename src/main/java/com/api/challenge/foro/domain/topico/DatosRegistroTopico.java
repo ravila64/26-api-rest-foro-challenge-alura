@@ -16,11 +16,11 @@ public record DatosRegistroTopico(
       LocalDateTime fecha,
       @NotNull(message = "{status.obl}")
       Status status,
+      @NotBlank(message = "{autor.obl}")
+      Usuario autor,
       @NotBlank(message = "{curso.obl}")
       String curso,
-      @NotNull(message = "{autor.obl}")
-      Usuario autor,
-      @NotBlank(message = "{activo.obl}")
+      @NotNull(message = "{activo.obl}")
       Boolean activo
 ) {
 }

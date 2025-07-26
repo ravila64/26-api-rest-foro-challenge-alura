@@ -10,9 +10,8 @@ public record DatosActualizarTopico(
         @NotNull Long id,
         String titulo,
         String mensaje,
+        LocalDateTime fecha,
         Status status,
-        @NotNull Long usuario_id,
-        String curso,
-        LocalDateTime fecha
-) {
+        @NotNull Long autor_id,
+        String curso) {
 }
