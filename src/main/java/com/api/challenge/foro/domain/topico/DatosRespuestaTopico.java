@@ -11,7 +11,8 @@ public record DatosRespuestaTopico(
       LocalDateTime fecha,
       Status status,
       Long autor_id,
-      String curso
+      String curso,
+      Boolean activo
 ) {
    public DatosRespuestaTopico(Topico topico) {
       this(
@@ -21,6 +22,7 @@ public record DatosRespuestaTopico(
             topico.getFecha(),
             topico.getStatus(),
             topico.getAutor().getId(),
-            topico.getCurso());
+            topico.getCurso(),
+            topico.isActivo());
    }
 }

@@ -1,5 +1,6 @@
 package com.api.challenge.foro.controller;
 
+import com.api.challenge.foro.domain.ValidacionException;
 import com.api.challenge.foro.domain.topico.*;
 import com.api.challenge.foro.domain.usuario.UsuarioRepository;
 import jakarta.transaction.Transactional;
@@ -26,16 +27,6 @@ public class TopicoController {
    @Autowired
    private TopicoService topicoService;
 
-//   public ResponseEntity<DatosRespuestaTopico> registrarTopico(
-//         @RequestBody @Valid DatosRegistroTopico datos,
-//         UriComponentsBuilder uriComponentsBuilder) {
-//      Topico topico = topicoRepository.save(new Topico(datos));
-//      DatosRespuestaTopico datosRespuestaTopico = new DatosRespuestaTopico(topico.getId(), topico.getTitulo(), topico.getMensaje(),
-//            topico.getFecha(), topico.getStatus(), topico.getAutor(), topico.getCurso());
-//      URI url = uriComponentsBuilder.path("/topicos/{id}").buildAndExpand(topico.getId()).toUri();
-//      return ResponseEntity.created(url).body(datosRespuestaTopico);
-//   }
-
    @PostMapping
    public ResponseEntity<DatosRespuestaTopico> crearTopico(@RequestBody DatosRegistroTopico datosDTO) {
       DatosRespuestaTopico respuesta = topicoService.topicoCreado(datosDTO);
@@ -55,7 +46,8 @@ public class TopicoController {
       Topico topico = topicoRepository.getReferenceById(datosActualizarTopico.id());
       topico.actualizarDatos(datosActualizarTopico);
       return ResponseEntity.ok(new DatosRespuestaTopico(topico.getId(), topico.getTitulo(), topico.getMensaje(),
-            topico.getFecha(), topico.getStatus(), topico.getAutor().getId(), topico.getCurso()));
+            topico.getFecha(), topico.getStatus(), topico.getAutor().getId(), topico.getCurso(),
+            topico.isActivo()));
    }
 
    // Delete logico
@@ -72,7 +64,7 @@ public class TopicoController {
    public ResponseEntity<DatosRespuestaTopico> retornaDatosTopico(@PathVariable Long id) {
       Topico topico = topicoRepository.getReferenceById(id);
       var datosTopico = new DatosRespuestaTopico(topico.getId(), topico.getTitulo(), topico.getMensaje(),
-            topico.getFecha(), topico.getStatus(), topico.getAutor().getId(), topico.getCurso());
+            topico.getFecha(), topico.getStatus(), topico.getAutor().getId(), topico.getCurso(), true);
       return ResponseEntity.ok(datosTopico);
    }
 
