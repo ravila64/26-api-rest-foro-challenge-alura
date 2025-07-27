@@ -8,10 +8,10 @@ import java.time.LocalDateTime;
 
 public record DatosActualizarTopico(
         @NotNull Long id,
-        String titulo,
-        String mensaje,
-        LocalDateTime fecha,
-        Status status,
+        @NotBlank String titulo,
+        @NotBlank String mensaje,
+        @NotNull LocalDateTime fecha,
+        @NotBlank Status status,
         @NotNull Long autor_id,
-        String curso) {
+        @NotBlank String curso) {
 }

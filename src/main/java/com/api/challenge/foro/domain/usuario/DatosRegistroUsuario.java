@@ -2,6 +2,7 @@ package com.api.challenge.foro.domain.usuario;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 
 public record DatosRegistroUsuario(
@@ -11,7 +12,10 @@ public record DatosRegistroUsuario(
       @NotBlank(message = "Usar email para nombre de usuario")
       @Email
       String email,
-      @NotBlank(message = "Debe tener entre 6 y 10 digitos.") @Pattern(regexp = "\\d{6,10}")
-      String clave
+      //@NotBlank(message = "Debe tener entre 6 y 10 digitos.") @Pattern(regexp = "\\d{6,10}")
+      @NotBlank
+      String clave,
+      @NotNull
+      Boolean activo
 ) {
 }

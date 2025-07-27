@@ -23,7 +23,8 @@ public class TopicoController {
    private TopicoRepository topicoRepository;
    @Autowired
    private UsuarioRepository usuarioRepository;
-
+   @Autowired
+   private TopicoService topicoService;
 
 //   public ResponseEntity<DatosRespuestaTopico> registrarTopico(
 //         @RequestBody @Valid DatosRegistroTopico datos,
@@ -35,14 +36,10 @@ public class TopicoController {
 //      return ResponseEntity.created(url).body(datosRespuestaTopico);
 //   }
 
-   // registrar o insertar topicos
    @PostMapping
-   @Transactional
-   public ResponseEntity registrar(@RequestBody @Valid DatosRegistroTopico datos, UriComponentsBuilder uriBuilder) {
-      var topico = new Topico(datos);
-      topicoRepository.save(topico);
-      var uri = uriBuilder.path("/topicos/{id}").buildAndExpand(topico.getId()).toUri();
-      return ResponseEntity.created(uri).body(new DatosRespuestaTopico(topico));
+   public ResponseEntity<DatosRespuestaTopico> crearTopico(@RequestBody DatosRegistroTopico datosDTO) {
+      DatosRespuestaTopico respuesta = topicoService.topicoCreado(datosDTO);
+      return ResponseEntity.ok(respuesta);
    }
 
    // Listar topicos
@@ -58,7 +55,7 @@ public class TopicoController {
       Topico topico = topicoRepository.getReferenceById(datosActualizarTopico.id());
       topico.actualizarDatos(datosActualizarTopico);
       return ResponseEntity.ok(new DatosRespuestaTopico(topico.getId(), topico.getTitulo(), topico.getMensaje(),
-            topico.getFecha(), topico.getStatus(), topico.getAutor(), topico.getCurso()));
+            topico.getFecha(), topico.getStatus(), topico.getAutor().getId(), topico.getCurso()));
    }
 
    // Delete logico
@@ -75,7 +72,7 @@ public class TopicoController {
    public ResponseEntity<DatosRespuestaTopico> retornaDatosTopico(@PathVariable Long id) {
       Topico topico = topicoRepository.getReferenceById(id);
       var datosTopico = new DatosRespuestaTopico(topico.getId(), topico.getTitulo(), topico.getMensaje(),
-            topico.getFecha(), topico.getStatus(), topico.getAutor(), topico.getCurso());
+            topico.getFecha(), topico.getStatus(), topico.getAutor().getId(), topico.getCurso());
       return ResponseEntity.ok(datosTopico);
    }
 

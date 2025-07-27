@@ -5,6 +5,8 @@ import com.api.challenge.foro.domain.usuario.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class TopicoService {
    @Autowired
@@ -12,21 +14,22 @@ public class TopicoService {
    @Autowired
    private UsuarioRepository usuarioRepository;
 
-   public DatosRespuestaTopico topicoCreado(TopicoDTO topicoDTO){
-      if (!usuarioRepository.findById(topicoDTO.autor_id()).isPresent()){
+   public DatosRespuestaTopico topicoCreado(DatosRegistroTopico datosDTO){
+      Optional isAutorId =usuarioRepository.findById(datosDTO.autor().getId());
+      if (!isAutorId.isPresent()){
          throw new ValidacionException("ID de usuario no está registrado en la base de datos.");
       }
-      var titulo= topicoDTO.titulo();
+      var titulo= datosDTO.titulo();
       if (titulo != null && topicoRepository.existsByTituloIgnoreCase(titulo)){
          throw new ValidacionException("Este título ya está existe en base de datos, Revisar topicos");
       }
-      String mensaje = topicoDTO.mensaje();
+      String mensaje = datosDTO.mensaje();
       if (mensaje != null && topicoRepository.existsByMensajeIgnoreCase(mensaje)){
          throw new ValidacionException("Este mensaje ya está existe en base de datos. Revisar topicos" );
       }
-      var usuario = usuarioRepository.findById(topicoDTO.autor_id()).get();
-      var topicoNuevo= new Topico(null, titulo, mensaje, topicoDTO.fecha(),
-                        topicoDTO.status(), usuario,topicoDTO.curso());
+      var usuario = usuarioRepository.findById(datosDTO.autor().getId()).get();
+      var topicoNuevo= new Topico(null, titulo, mensaje, datosDTO.fecha(),
+                        datosDTO.status(), usuario, datosDTO.curso(), datosDTO.activo());
       topicoRepository.save(topicoNuevo);
       return new DatosRespuestaTopico(topicoNuevo);
    }

@@ -33,7 +33,7 @@ public class Topico {
    private boolean activo;
 
    public Topico(DatosRegistroTopico datos) {
-      this.id = null;
+      //this.id = null;
       this.titulo = datos.titulo();
       this.mensaje = datos.mensaje();
       this.fecha = LocalDateTime.now();

@@ -10,7 +10,7 @@ public record DatosRespuestaTopico(
       String mensaje,
       LocalDateTime fecha,
       Status status,
-      Usuario autor,
+      Long autor_id,
       String curso
 ) {
    public DatosRespuestaTopico(Topico topico) {
@@ -20,7 +20,7 @@ public record DatosRespuestaTopico(
             topico.getMensaje(),
             topico.getFecha(),
             topico.getStatus(),
-            topico.getAutor(),
+            topico.getAutor().getId(),
             topico.getCurso());
    }
 }
