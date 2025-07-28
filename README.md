@@ -60,7 +60,7 @@ Servicio de autenticación/autorización para restringir el acceso a la informac
 <h2>Como usar la API</h2> <br/> 
 **FORO API ALURA**   <br/>
 Generar token al Inicio de Sesion. <br/>
-![Inicio de sesion](src/main/resources/static/0_crear token inico sesion.JPG)
+![Inicio de sesion](https://github.com/ravila64/26-api-rest-foro-challenge-alura/blob/main/src/main/resources/static/0_crear_token_inico_sesion.JPG)
 
 
 <h2>Buscar libro por titulo y grabar bd</h2>
