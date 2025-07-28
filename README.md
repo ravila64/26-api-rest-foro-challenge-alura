@@ -1,7 +1,4 @@
-![Programação-Java_ Persistencia de datos y consultas con Spring Data JPA](https://github.com/genesysR-dev/2066-java-persitencia-de-datos-y-consultas-con-Spring-JPA/assets/91544872/e0e3a9f8-afc7-4e7b-be83-469351ef2d70)
-
-# Challenge LiterAlura by Rene Avila Alonso
-
+# Challenge Foro Alura by Rene Avila Alonso
 Proyecto desarrollado durante el curso de la formación Avanzando con Java de Alura
 para BackEnd
 
@@ -34,16 +31,36 @@ NOTAS ANTES DE UTILIZAR EL PROYECTO </br>
 * </br>
 
 <h2>Descripción proyecto</h2>
-Construir ana API, para manejo d eun foro, curso de ALURA backend <br/>
-Aprenderás a realizar solicitudes a una API, manipular datos JSON y,
-finalmente, grabar informacion en la base de datos y hacer las consultas
-respectivas a estas tablas de la base de datos con MySQL, 
-con sentencias en el repositorio con JPA, JPQL y sql nativo<br/>
+¡Te damos la bienvenida a nuestro más reciente Challenge Back End!
+
+Un foro es un lugar donde todos los participantes de una plataforma
+pueden colocar sus preguntas sobre determinados asuntos. Aquí en Alura, los estudiantes utilizan el foro para resolver sus dudas sobre los cursos y proyectos en los que están participando. Este lugar mágico está lleno de mucho aprendizaje y colaboración entre estudiantes, profesores y moderadores.
+
+Ya sabemos para que sirve el foro y sabemos cómo se ve, pero ¿sabemos cómo funciona por detrás? Es decir ¿dónde se almacenan las informaciones? ¿cómo se tratan esos datos para que se relacione un tópico con una respuesta, o como se relacionan los usuarios con las respuestas de un tópico?
+
+Ese es nuestro desafío, que se llama Foro Hub: vamos a replicar a nivel de back end este proceso, y para eso crearemos una API REST usando Spring.
+
+Nuestra API va a centrarse específicamente en los tópicos, y debe permitir a los usuarios:
+
+Crear un nuevo tópico
+Mostrar todos los tópicos creados
+Mostrar un tópico específico
+Actualizar un tópico
+Eliminar un tópico
+
+Es lo que conocemos comúnmente como CRUD (CREATE, READ, UPDATE, DELETE).
+
+Al final de nuestro desarrollo tendremos una API REST con las siguientes funcionalidades
+
+API con rutas implementadas siguiendo las mejores prácticas del modelo REST;</br>
+Validaciones realizadas según reglas de negocio;</br>
+Implementación de una base de datos para la persistencia de la información;</br>
+Servicio de autenticación/autorización para restringir el acceso a la información.<br/>
 
 <h2>Como usar la API</h2> <br/> 
 **FORO API ALURA**   <br/>
 Generar token al Inicio de Sesion. <br/>
-![descripción de la imágen]()
+![Inicio de sesion]()
 
 
 <h2>Buscar libro por titulo y grabar bd</h2>
