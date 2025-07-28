@@ -60,10 +60,10 @@ Servicio de autenticación/autorización para restringir el acceso a la informac
 <h2>Como usar la API</h2> <br/> 
 **FORO API ALURA**   <br/>
 Generar token al Inicio de Sesion. <br/>
-![Inicio de sesion](0_crear_token_inico_sesion.jpg)
-<img src="../src/main/resources/static/0_crear_token_inico_sesion.jpg" alt="Mi imagen" />
+<img src="src/main/resources/static/0_crear_token_inico_sesion.jpg" alt="autorizacion" />
 
-<h2>Buscar libro por titulo y grabar bd</h2>
+<h2>Grabar token en insomnia</h2>
+<img src="src/main/resources/static/1_grabar_token_env_insomnia.jpg" alt="grabar token generado en var en insomnia" />
 </br>
 
 [Inicio](#Inicio)
