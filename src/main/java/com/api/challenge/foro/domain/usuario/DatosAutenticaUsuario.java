@@ -6,7 +6,7 @@ import jakarta.validation.constraints.NotBlank;
 //UsuarioDTO
 public record DatosAutenticaUsuario(
       @NotBlank
-      @Email(message = "Correo Electronico no valido")
+      @Email(message = "Correo Electronico Invalido")
       String email,
       @NotBlank
       String clave)

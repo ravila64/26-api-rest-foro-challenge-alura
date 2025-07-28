@@ -10,9 +10,9 @@ public record DatosRegistroUsuario(
       @NotBlank
       String nombre,
       @NotBlank(message = "Usar email para nombre de usuario")
-      @Email
+      @Email(message = "Email invalido")
       String email,
-      //@NotBlank(message = "Debe tener entre 6 y 10 digitos.") @Pattern(regexp = "\\d{6,10}")
+      @NotBlank(message = "Clave de 4 a 10 digitos.") @Pattern(regexp = "\\d{4,10}")
       @NotBlank
       String clave,
       @NotNull
