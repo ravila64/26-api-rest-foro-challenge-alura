@@ -56,7 +56,16 @@ public class TopicoController {
    public ResponseEntity eliminarTopico(@PathVariable Long id) {
       Topico topico = topicoRepository.getReferenceById(id);
       topico.desactivarTopico();
-      return ResponseEntity.noContent().build();
+      return ResponseEntity.ok("Registro Eliminado");    //.noContent().build();
+   }
+
+   // Recuperar un topico
+   @PutMapping("/{id}")
+   @Transactional
+   public ResponseEntity recuperar(@PathVariable Long id) {
+      var topico = topicoRepository.getReferenceById(id);
+      topico.activarTopico();
+      return ResponseEntity.ok("Registro Recuperado");
    }
 
    // Muestra datos de un solo topico

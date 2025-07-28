@@ -14,7 +14,7 @@ public record DatosRegistroTopico(
       String titulo,
       @NotBlank(message = "{mensaje.obl}")
       String mensaje,
-      @PastOrPresent(message = "{fecha.obli}")
+      @NotNull(message = "{fecha.obli}")   // @PastOrPresent
       LocalDateTime fecha,
       @NotBlank(message = "{status.obl}")
       Status status,
