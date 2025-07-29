@@ -58,10 +58,11 @@ Implementación de una base de datos para la persistencia de la información;</b
 Servicio de autenticación/autorización para restringir el acceso a la información.<br/>
 
 <h2>Como usar la API</h2> <br/> 
+
 **FORO API ALURA**   <br/>
 Generar token al Inicio de Sesion. <br/>
-
-![autorizacion](src/main/assets/00_crear_token_inico_sesion.png)
+<h3>Autorizacion</h3>
+![Autorizacion](src/main/assets/00_crear_token_inico_sesion.png)
 
 <h2>Registrar usuarios desde MYSQL</h2>
 ![token](src/main/assets/08_grabar_usuarios.png)
