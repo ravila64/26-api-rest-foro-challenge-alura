@@ -8,7 +8,7 @@ para BackEnd
 [Personas o entidades contribuyentes en el Proyecto](#Personas-o-entidades-contribuyentes-en-el-Proyecto) <br/>
 [Desarrolladores del Proyecto](#Desarrolladores-del-Proyecto) <br/>
 
-1. [Autorizacion](#autorizacion)
+1. [Autorización](#autorización)
 2. [Registrar usuarios desde MYSQL](#registrar-usuarios-desde-MYSQL)
 3. [Registrar topicos](#registrar-topicos)
 4. [Lista de topicos](#lista-de-topicos)
@@ -18,9 +18,6 @@ para BackEnd
 7. [Actualizar topicos](#actualizar-topicos)
 
 <h2>**26-API REST FORO CHALLENGE ALURA**</h2>
-<h3>Inicio</h3>
-<em> MENU DE OPCIONES </em> <br/>
-- - - - - - - - - - - - - - - - - - - - - - <br/>
 
 NOTAS ANTES DE UTILIZAR EL PROYECTO </br>
 * Utilizar una variable de entorno JWT_SECRET, con un numero de 4 a 8 cifras</br>
@@ -28,29 +25,38 @@ NOTAS ANTES DE UTILIZAR EL PROYECTO </br>
 * Se esta utilizando JDK 17, e Intellij IDEA </br>
 * puede utilizar en variables de entorno DB_NAME, DB_PASSWORD, pero </br>
 * hacer los cambios respectivos en Application.properties </br>
-* </br>
+* Tener creada la base de datos o esquema en MySql, db_foros_api</br>
 
 <h2>Descripción proyecto</h2>
-¡Te damos la bienvenida a nuestro más reciente Challenge Back End!
+¡Te damos la bienvenida a nuestro más reciente Challenge Back End! </br>
 
 Un foro es un lugar donde todos los participantes de una plataforma
-pueden colocar sus preguntas sobre determinados asuntos. Aquí en Alura, los estudiantes utilizan el foro para resolver sus dudas sobre los cursos y proyectos en los que están participando. Este lugar mágico está lleno de mucho aprendizaje y colaboración entre estudiantes, profesores y moderadores.
+pueden colocar sus preguntas sobre determinados asuntos. Aquí en Alura, 
+los estudiantes utilizan el foro para resolver sus dudas sobre los cursos 
+y proyectos en los que están participando. Este lugar mágico está lleno de 
+mucho aprendizaje y colaboración entre estudiantes, profesores y moderadores.</br>
 
-Ya sabemos para que sirve el foro y sabemos cómo se ve, pero ¿sabemos cómo funciona por detrás? Es decir ¿dónde se almacenan las informaciones? ¿cómo se tratan esos datos para que se relacione un tópico con una respuesta, o como se relacionan los usuarios con las respuestas de un tópico?
+Ya sabemos para que sirve el foro y sabemos cómo se ve, pero ¿sabemos cómo 
+funciona por detrás? Es decir ¿dónde se almacenan las informaciones? 
+¿cómo se tratan esos datos para que se relacione un tópico con una respuesta, 
+o como se relacionan los usuarios con las respuestas de un tópico?</br>
 
-Ese es nuestro desafío, que se llama Foro Hub: vamos a replicar a nivel de back end este proceso, y para eso crearemos una API REST usando Spring.
+Ese es nuestro desafío, que se llama Foro Hub: vamos a replicar a nivel de 
+back end este proceso, y para eso crearemos una API REST usando Spring.</br>
 
-Nuestra API va a centrarse específicamente en los tópicos, y debe permitir a los usuarios:
+Nuestra API va a centrarse específicamente en los tópicos, y debe permitir a 
+los usuarios:</br>
 
-Crear un nuevo tópico
-Mostrar todos los tópicos creados
-Mostrar un tópico específico
-Actualizar un tópico
-Eliminar un tópico
+* Crear un nuevo tópico</br>
+* Mostrar todos los tópicos creados</br>
+* Mostrar un tópico específico</br>
+* Actualizar un tópico</br>
+* Eliminar un tópico</br>
 
-Es lo que conocemos comúnmente como CRUD (CREATE, READ, UPDATE, DELETE).
+Es lo que conocemos comúnmente como CRUD (CREATE, READ, UPDATE, DELETE).</br>
 
-Al final de nuestro desarrollo tendremos una API REST con las siguientes funcionalidades
+Al final de nuestro desarrollo tendremos una API REST con las siguientes 
+funcionalidades:</br>
 
 API con rutas implementadas siguiendo las mejores prácticas del modelo REST;</br>
 Validaciones realizadas según reglas de negocio;</br>
@@ -59,19 +65,27 @@ Servicio de autenticación/autorización para restringir el acceso a la informac
 
 <h2>Como usar la API</h2> <br/> 
 
-**FORO API ALURA**   <br/>
 Generar token al Inicio de Sesion. <br/>
-<h3>Autorizacion</h3>
-![Autorizacion](src/main/assets/00_crear_token_inico_sesion.png)
+<h3>Autorización</h3>
+
+![Autorización](/src/main/assets/00_crear_token_inico_sesion.png)
+
+Prueba de imagenes png
+![imagen1](/src/main/assets/imagen1.png)
 
 <h2>Registrar usuarios desde MYSQL</h2>
-![token](src/main/assets/08_grabar_usuarios.png)
+
+![grabar usuarios](src/main/assets/08_grabar_usuarios.png)
 Entre a:
 ```
 https://bcrypt-generator.com/
 ```
 Genere una clave encryptada de 4 a 8 digitos y grabar un usuario
 con id, nombre, email, clave, activo desde MYSQL. 
+
+Si necesita insertar registros en MySql, lo puede hacer por:
+* MySql Line Clent (Esta opciUn esta disponible cuando instala MYSQL WORKBENCH)
+* MySql Workbench
 
 <h2>Grabar token en insomnia</h2>
 ![token](src/main/assets/01_grabar_token_env_insomnia.png)
@@ -82,12 +96,13 @@ con id, nombre, email, clave, activo desde MYSQL.
 <h2>Registrar topicos</h2>
 ![registrar topicos](src/main/assets/02_registrar_topico.png)
 </br>
+
 [Inicio](#Inicio)
 
 <h2>Lista de Topicos</h2>
 ![Lista topicos](src/main/assets/06_lista_pagina_0_de_topicos.png)
-
 </br>
+
 [Inicio](#Inicio)
 
 <h2>Detalle de un topico</h2>
@@ -102,16 +117,16 @@ con id, nombre, email, clave, activo desde MYSQL.
 
 [Inicio](#Inicio)
 
-<h2>Listar libros por idioma BD</h2>
+<h2>Recuperar topico borrado</h2>
 </br>
-[Inicio](#Inicio)
-<h2>Libros mas populares en la API GUTENDEX</h2>
-</br>
+Arreglar aqui recuperar topico
+![recuperar topico](src/main/assets/08_grabar_usuarios.png)
 
 [Inicio](#Inicio)
 
-<h2>Buscar autor por nombre BD</h2>
+<h2>listar un topico elminado</h2>
 </br>
+![listar topico eliminado](src/main/assets/07_Listar_un_topico_eliminado.png)
 
 [Inicio](#Inicio)
 
