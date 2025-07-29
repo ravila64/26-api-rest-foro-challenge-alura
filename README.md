@@ -70,12 +70,9 @@ Generar token al Inicio de Sesion. <br/>
 
 ![Autorización](/src/main/assets/00_crear_token_inico_sesion.png)
 
-Prueba de imagenes png
-![imagen1](/src/main/assets/imagen1.png)
-
 <h2>Registrar usuarios desde MYSQL</h2>
 
-![grabar usuarios](src/main/assets/08_grabar_usuarios.png)
+![grabar usuarios](/src/main/assets/08_grabar_usuarios.png)
 Entre a:
 ```
 https://bcrypt-generator.com/
@@ -84,72 +81,79 @@ Genere una clave encryptada de 4 a 8 digitos y grabar un usuario
 con id, nombre, email, clave, activo desde MYSQL. 
 
 Si necesita insertar registros en MySql, lo puede hacer por:
-* MySql Line Clent (Esta opciUn esta disponible cuando instala MYSQL WORKBENCH)
-* MySql Workbench
+* MySql Line Clent (Esta opcion esta disponible cuando instala MYSQL WORKBENCH)
+* Desde MySql Workbench, crear un query y coloque la siquiente sentencia:
+```commandline
+use db_foros_api;
+```
+La base de datos db_foros_api ya debe estar creada, esto lo hace 
+la migracion con flyway automaticamente.
 
+Grabe algunos registros en la tabla usuarios:
+```commandline
+use db_foros_api;
+INSERT INTO `usuarios` VALUES (1,'nombre usuario 1','pedro.usuario@foro.alu','$2y$10$RNFOk3Gz7C2PrQ1knGljPu93NhpX4SIX.Dap3Vi5EGwrIvMmCSWby',1);
+INSERT INTO `usuarios` VALUES (2,'nombre usuario 2','maria.apellido@voll.med','$2y$10$IJdVIrFRyH88UK1XiuPQbuSxMBFb1Pg7z54jTNtXZwtuYnqW10eQq',1);
+```
 <h2>Grabar token en insomnia</h2>
-![token](src/main/assets/01_grabar_token_env_insomnia.png)
+![token](/src/main/assets/01_grabar_token_env_insomnia.png)
 </br>
 
 [Inicio](#Inicio)
 
 <h2>Registrar topicos</h2>
-![registrar topicos](src/main/assets/02_registrar_topico.png)
+![registrar topicos](/src/main/assets/02_registrar_topico.png)
 </br>
 
 [Inicio](#Inicio)
 
 <h2>Lista de Topicos</h2>
-![Lista topicos](src/main/assets/06_lista_pagina_0_de_topicos.png)
+![Lista topicos](/src/main/assets/06_lista_pagina_0_de_topicos.png)
 </br>
 
 [Inicio](#Inicio)
 
 <h2>Detalle de un topico</h2>
-![Lista topicos](src/main/assets/05_Listar_un_topico.png)
+![Lista topicos](/src/main/assets/05_Listar_un_topico.png)
 </br>
 
 [Inicio](#Inicio)
 
 <h2>Eliminar un topico</h2>
-![Lista topicos](src/main/assets/04_Elimina_registro_2.png)
+![Lista topicos](/src/main/assets/04_Elimina_registro_2.png)
 </br>
 
 [Inicio](#Inicio)
 
 <h2>Recuperar topico borrado</h2>
 </br>
-Arreglar aqui recuperar topico
-![recuperar topico](src/main/assets/08_grabar_usuarios.png)
+![recuperar topico](/src/main/assets/09_recuperar_registro.png)
 
 [Inicio](#Inicio)
 
 <h2>listar un topico elminado</h2>
 </br>
-![listar topico eliminado](src/main/assets/07_Listar_un_topico_eliminado.png)
+![listar topico eliminado](/src/main/assets/07_Listar_un_topico_eliminado.png)
 
 [Inicio](#Inicio)
 
 <h2>Tecnologías utilizadas</h2>
-- Java <br/>
-- Manejo de API GUTENDEX <br/>
-- Postman  (para hacer las pruebas de la API) <br/>
+- Java, sprint boot<br/>
+- Insomina o Postman  (para hacer las pruebas de la API) <br/>
 - Editor IDE, Intellij IDEA <br/>
 - git, github y terminal. <br/>
 - LURI, IA de ALURA-ONE, Sao Pablo, Brazil. <br/>
-- API, Exchangerate API. <br/>
-- Gson, Api de Java, desarrollada por Google. <br/>
 - plugins de Intellij IDEA, para mostrar README.md <br/>
 - Trello (planeador de actividades a seguir de un proyecto) <br/>
-- De Manejador de base de datos, ProgreSQL.  <br/>
-- Administrador de bases de datos, PGADMIN-4 <br/>
+- De Manejador de base de datos, MYSQL WORKBENCH <br/>
+- Administrador de bases de datos, MYSQL COMMAND LINE CLIENT<br/>
 
 [Inicio](#Inicio)
 
 <h2>Personas o entidades contribuyentes en el Proyecto</h2>
 - Alura LATAM, ONE(Oracle Next Education) <br/>
-- Profesor. Bruno Dario Fernández Ellerbach <br/>
 - Profesora. Genesys Rondón </br>
+- Profesor. Bruno Dario Fernández Ellerbach <br/>
 - Profesor. Eric Monné Fraga de Oliveira. <br/>
 
 <h2>Desarrolladores del Proyecto</h2>
