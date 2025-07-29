@@ -63,29 +63,40 @@ Generar token al Inicio de Sesion. <br/>
 
 ![autorizacion](src/main/assets/00_crear_token_inico_sesion.png)
 
+<h2>Registrar usuarios desde MYSQL</h2>
+![token](src/main/assets/08_grabar_usuarios.png)
+Entre a:
+```
+https://bcrypt-generator.com/
+```
+Genere una clave encryptada de 4 a 8 digitos y grabar un usuario
+con id, nombre, email, clave, activo desde MYSQL. 
+
 <h2>Grabar token en insomnia</h2>
-<img src="src/main/resources/static/1_grabar_token_env_insomnia.jpg" alt="grabar token generado en var en insomnia" />
+![token](src/main/assets/01_grabar_token_env_insomnia.png)
 </br>
 
 [Inicio](#Inicio)
 
-<h2>Listar libros registrados BD</h2> 
+<h2>Registrar topicos</h2>
+![registrar topicos](src/main/assets/02_registrar_topico.png)
 </br>
 [Inicio](#Inicio)
 
-<h2>Listar autores registrados BD</h2> 
-```
-Hibernate: SELECT nombre, year_born, year_dead FROM autores </br>
-```
+<h2>Lista de Topicos</h2>
+![Lista topicos](src/main/assets/06_lista_pagina_0_de_topicos.png)
+
 </br>
 [Inicio](#Inicio)
 
-<h2>Listar autores vivos en un determinado año BD</h2> 
+<h2>Detalle de un topico</h2>
+![Lista topicos](src/main/assets/05_Listar_un_topico.png)
 </br>
 
 [Inicio](#Inicio)
 
-<h2>Listar autores fallecidos BD</h2>
+<h2>Eliminar un topico</h2>
+![Lista topicos](src/main/assets/04_Elimina_registro_2.png)
 </br>
 
 [Inicio](#Inicio)
