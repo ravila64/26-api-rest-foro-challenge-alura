@@ -72,9 +72,7 @@ Servicio de autenticación/autorización para restringir el acceso a la informac
 <h3>Generar token al Inicio de Sesion</h3>. <br/>
 <h3>Autorización</h3>. 
 </br>
-```
-[POST] http://localhost:8080/login
-```
+**{POST} http://localhost:8080/login**
 </br>
 ![Autorización](/src/main/assets/0_crear_token_inico_sesion.png) 
 </br>
