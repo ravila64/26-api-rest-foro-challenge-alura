@@ -70,9 +70,9 @@ Servicio de autenticación/autorización para restringir el acceso a la informac
 [Inicio](#inicio)
 </br>
 <h3>Generar token al Inicio de Sesion</h3>. <br/>
-<h3>Autorización</h3>. 
+<h3>Autorización</h3> 
 </br>
-**{POST} http://localhost:8080/login**
+<STRONG>{POST} http://localhost:8080/login</STRONG>
 </br>
 ![Autorización](/src/main/assets/0_crear_token_inico_sesion.png) 
 </br>
@@ -80,6 +80,9 @@ Servicio de autenticación/autorización para restringir el acceso a la informac
 </br>
 
 <h2>Registrar usuarios desde MYSQL</h2>
+</br>
+<STRONG>{POST} http://localhost:8080/topicos</STRONG>
+</br>
 ![grabar usuarios](/src/main/assets/8_grabar_usuarios.png)
 </br>
 [Inicio](#inicio)
@@ -107,70 +110,67 @@ INSERT INTO `usuarios` VALUES (1,'nombre usuario 1','pedro.usuario@foro.alu','$2
 INSERT INTO `usuarios` VALUES (2,'nombre usuario 2','maria.apellido@voll.med','$2y$10$IJdVIrFRyH88UK1XiuPQbuSxMBFb1Pg7z54jTNtXZwtuYnqW10eQq',1);
 ```
 <h2>Grabar token en insomnia</h2>
+Primero generar token en Autorización, luego busque BASE ENVIRONMENT
+cree una variable "bearer":"aqui coloque el token generado"
 </br>
 ```commandline
 [POST] http://localhost:8080/login
 ```
-![grabar token]({{site.baseurl}}/src/main/assets/1_grabar_token_env_insomnia.png)
+![grabar token](/src/main/assets/1_grabar_token_env_insomnia.png)
 </br>
-<img src="/src/main/assets/1_grabar_token_env_insomnia.png" alt=""/>
-
 [Inicio](#inicio)
 
 <h2>Grabar variable ambiente en Insominia</h2> </br>
-```commandline
-[POST] http://localhost:8080/topicos
-```
 ![token](/src/main/assets/3_insertar_var_en_los_request.png)
 </br>
 [Inicio](#inicio)
 
-<h2>Registrar topicos</h2> </br>
-```commandline
-[POST] http://localhost:8080/topicos
-```
+<h2>Registrar topicos</h2>
+</br>
+<STRONG>{POST} http://localhost:8080/topicos</STRONG>
+</br>
 ![registrar topicos](/src/main/assets/2_registrar_topico.png)
 </br>
 [Inicio](#inicio)
 
 <h2>Lista de Topicos</h2> </br>
-```commandline
-[GET] http://localhost:8080/topicos
-```
+</br>
+<STRONG>{GET} http://localhost:8080/topicos</STRONG>
+</br>
 ![Lista topicos](/src/main/assets/6_lista_de_topicos.png)
 </br>
 [Inicio](#inicio)
 
 <h2>Detalle de un topico</h2> </br>
-```commandline
-[GET] http://localhost:8080/topicos/2
-```
+</br>
+<STRONG>{GET} http://localhost:8080/topicos/2</STRONG>
+</br>
 Para este caso esta listando el topico con id=2 </br>
 ![Lista topicos](/src/main/assets/5_listar_un_topico.png)
 </br>
 [Inicio](#inicio)
 
 <h2>Eliminar un topico</h2> </br>
-```commandline
-[DELETE] http://localhost:8080/topicos/3
-```
-Elimina el topico coon id=3 </br>
+</br>
+<STRONG>{DELETE} http://localhost:8080/topicos/3</STRONG>
+</br>
+Elimina el topico con id=3 </br>
 ![Eliminar un  topico](/src/main/assets/4_elimina_registro_2.png)
 </br>
 [Inicio](#inicio)
 
 <h2>Recuperar topico borrado</h2> </br>
-```commandline
-[PUT] http://localhost:8080/topicos/recupera/2
-```
+</br>
+<STRONG>{PUT} http://localhost:8080/topicos/recupera/2</STRONG>
+</br>
 Recupera por borrado logico, el id=2 de topicos
 ![recuperar topico](/src/main/assets/9_recuperar_registro.png)
 [Inicio](#inicio)
 
 <h2>Actualizar topicos</h2> </br>
-```commandline
-[PUT] http://localhost:8080/topicos/4
-```
+</br>
+<STRONG>{PUT} http://localhost:8080/topicos/4</STRONG>
+</br>
 Para este ejemplo edita y actualiza el topico con id=4 </br>
 
 <h2>Tecnologías utilizadas</h2>
