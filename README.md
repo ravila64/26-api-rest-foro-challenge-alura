@@ -66,17 +66,24 @@ Implementación de una base de datos para la persistencia de la información;</b
 Servicio de autenticación/autorización para restringir el acceso a la información.<br/>
 
 <h2>Como usar la API</h2> 
-<br/> 
+</br> 
 [Inicio](#inicio)
-<br/>
+</br>
 <h3>Generar token al Inicio de Sesion</h3>. <br/>
-<h3>Autorización</h3>. <br/>
-![Autorización](/src/main/assets/0_crear_token_inico_sesion.png)
+<h3>Autorización</h3>. 
+</br>
+```
+[POST] http://localhost:8080/login
+```
+</br>
+![Autorización](/src/main/assets/0_crear_token_inico_sesion.png) 
+</br>
 [Inicio](#inicio)
 </br>
 
 <h2>Registrar usuarios desde MYSQL</h2>
 ![grabar usuarios](/src/main/assets/8_grabar_usuarios.png)
+</br>
 [Inicio](#inicio)
 </br>
 Entre a:
