@@ -74,7 +74,7 @@ Servicio de autenticación/autorización para restringir el acceso a la informac
 </br>
 <STRONG>{POST} http://localhost:8080/login</STRONG>
 </br>
-![Autorización](/src/main/assets/0_crear_token_inico_sesion.png) 
+![Autorización](https://github.com/ravila64/26-api-rest-foro-challenge-alura/blob/main/src/main/assets/0_crear_token_inico_sesion.png) 
 </br>
 [Inicio](#inicio)
 </br>
