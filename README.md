@@ -65,9 +65,11 @@ Validaciones realizadas según reglas de negocio;</br>
 Implementación de una base de datos para la persistencia de la información;</br>
 Servicio de autenticación/autorización para restringir el acceso a la información.<br/>
 
-<h2>Como usar la API</h2> <br/> 
+<h2>Como usar la API</h2> 
+<br/> 
 [Inicio](#inicio)
 Generar token al Inicio de Sesion. <br/>
+
 <h3>Autorización</h3>
 ![Autorización](/src/main/assets/0_crear_token_inico_sesion.png)
 [Inicio](#inicio)
@@ -106,6 +108,7 @@ INSERT INTO `usuarios` VALUES (2,'nombre usuario 2','maria.apellido@voll.med','$
 
 <h2>Grabar variable ambiente en Insominia</h2>
 ![token](/src/main/assets/3_insertar_var_en_los_request.png)
+</br>
 [Inicio](#inicio)
 
 <h2>Registrar topicos</h2>
