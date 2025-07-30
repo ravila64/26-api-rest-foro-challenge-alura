@@ -2,8 +2,10 @@ package com.api.challenge.foro.domain.topico;
 
 import com.api.challenge.foro.domain.ValidacionException;
 import com.api.challenge.foro.domain.usuario.UsuarioRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.Optional;
 
@@ -36,4 +38,21 @@ public class TopicoService {
       return new DatosRespuestaTopico(topicoNuevo);
    }
 
+   // Actualizar topico
+   @Transactional
+   // DatosRespuestaTopico actualizarTopico(DatosActualizarTopico datos)
+   public Topico actualizarTopico(Topico datos) {
+          //datos.actualizarDatos(DatosActualizarTopico datos);   // estaba topico
+   return datos;
+//      return new DatosRespuestaTopico(
+//            datos.getId(),
+//            datos.getTitulo(),
+//            datos.getMensaje(),
+//            datos.getFecha(),
+//            datos.getStatus(),
+//            datos.getAutor().getId(),
+//            datos.getCurso(),
+//            datos.isActivo()
+//      );
+   }
 }

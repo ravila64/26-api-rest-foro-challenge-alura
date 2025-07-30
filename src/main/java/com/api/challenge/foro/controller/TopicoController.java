@@ -35,20 +35,27 @@ public class TopicoController {
 
    // Listar topicos
    @GetMapping
-   public ResponseEntity<Page<DatosListadoTopico>> listadoTopicos(@PageableDefault(size = 2) Pageable paginacion) {
+   public ResponseEntity<Page<DatosListadoTopico>> listadoTopicos(@PageableDefault(size = 10) Pageable paginacion) {
       return ResponseEntity.ok(topicoRepository.findByActivoTrue(paginacion).map(DatosListadoTopico::new));
    }
 
-   // Actualizar un topico
-   @PutMapping
-   @Transactional
-   public ResponseEntity actualizarTopico(@RequestBody @Valid DatosActualizarTopico datosActualizarTopico) {
-      Topico topico = topicoRepository.getReferenceById(datosActualizarTopico.id());
-      topico.actualizarDatos(datosActualizarTopico);
-      return ResponseEntity.ok(new DatosRespuestaTopico(topico.getId(), topico.getTitulo(), topico.getMensaje(),
-            topico.getFecha(), topico.getStatus(), topico.getAutor().getId(), topico.getCurso(),
-            topico.isActivo()));
-   }
+//   // Actualizar un topico
+//   @PutMapping("/{id}")
+//   @Transactional
+//   public ResponseEntity actualizarTopico(@RequestBody @PathVariable long id) {
+//      DatosActualizarTopico datos = topicoRepository.getReferenceById(id);
+//      topico.actualizarDatos(datos);
+//      return ResponseEntity.ok(new DatosRespuestaTopico(datos.getId(), datos.getTitulo(), datos.getMensaje(),
+//            datos.getFecha(), datos.getStatus(), datos.getAutor().getId(), datos.getCurso(),
+//            datos.isActivo()));
+//   }
+//   public ResponseEntity actualizarTopico(@RequestBody @Valid DatosActualizarTopico datosActualizarTopico) {
+//      Topico topico = topicoRepository.getReferenceById(datosActualizarTopico.id());
+//      topico.actualizarDatos(datosActualizarTopico);
+//      return ResponseEntity.ok(new DatosRespuestaTopico(topico.getId(), topico.getTitulo(), topico.getMensaje(),
+//            topico.getFecha(), topico.getStatus(), topico.getAutor().getId(), topico.getCurso(),
+//            topico.isActivo()));
+//   }
 
    // Delete logico
    @DeleteMapping("/{id}")
@@ -60,7 +67,7 @@ public class TopicoController {
    }
 
    // Recuperar un topico
-   @PutMapping("/{id}")
+   @PutMapping("/recupera/{id}")
    @Transactional
    public ResponseEntity recuperar(@PathVariable Long id) {
       var topico = topicoRepository.getReferenceById(id);

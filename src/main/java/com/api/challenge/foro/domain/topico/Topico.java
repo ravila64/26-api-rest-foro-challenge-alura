@@ -1,5 +1,6 @@
 package com.api.challenge.foro.domain.topico;
 
+import com.api.challenge.foro.domain.ValidacionException;
 import com.api.challenge.foro.domain.usuario.Usuario;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
@@ -58,18 +59,24 @@ public class Topico {
 
    // actualizar datos
    public void actualizarDatos(DatosActualizarTopico datosActualizarTopico) {
+      var str = "";
       if (datosActualizarTopico.titulo() != null) {
          this.titulo = datosActualizarTopico.titulo();
+         str = str + "Titulo ";
       }
       if (datosActualizarTopico.mensaje() != null) {
          this.mensaje = datosActualizarTopico.mensaje();
+         str = str + ", Mensaje ";
       }
       if (datosActualizarTopico.curso() != null) {
          this.curso = datosActualizarTopico.curso();
+         str = str + "y Curso ";
       }
-      if (datosActualizarTopico.status() != null) {
-         this.status = datosActualizarTopico.status();
-      }
+      str = str + "Actualizado ";
+      throw new ValidacionException(str);
+//      if (datosActualizarTopico.status() != null) {
+//         this.status = datosActualizarTopico.status();
+//      }
    }
 
    // desactivar topico
