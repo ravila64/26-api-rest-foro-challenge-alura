@@ -9,7 +9,7 @@ para BackEnd
 [Desarrolladores del Proyecto](#Desarrolladores-del-Proyecto) <br/>
 
 1. [Autorización](#autorización)
-2. [Registrar usuarios desde MYSQL](#registrar-usuarios-desde-MYSQL)
+2. [Registrar usuarios desde MYSQL](#registrar-usuarios-desde-mysql)
 3. [Registrar topicos](#registrar-topicos)
 4. [Lista de topicos](#lista-de-topicos)
 5. [Detalle de un topico](#detalle-de-un-topico)
@@ -97,8 +97,7 @@ INSERT INTO `usuarios` VALUES (1,'nombre usuario 1','pedro.usuario@foro.alu','$2
 INSERT INTO `usuarios` VALUES (2,'nombre usuario 2','maria.apellido@voll.med','$2y$10$IJdVIrFRyH88UK1XiuPQbuSxMBFb1Pg7z54jTNtXZwtuYnqW10eQq',1);
 ```
 <h2>Grabar token en insomnia</h2>
-
-![token](/src/main/assets/1_grabar_token_env_insomnia.png)
+![token](./src/main/assets/1_grabar_token_env_insomnia.png)
 </br>
 [Inicio](#Inicio)
 
