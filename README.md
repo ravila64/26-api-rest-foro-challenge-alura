@@ -48,7 +48,6 @@ back end este proceso, y para eso crearemos una API REST usando Spring.</br>
 
 Nuestra API va a centrarse específicamente en los tópicos, y debe permitir a 
 los usuarios:</br>
-
 * Crear un nuevo tópico</br>
 * Mostrar todos los tópicos creados</br>
 * Mostrar un tópico específico</br>
@@ -56,36 +55,26 @@ los usuarios:</br>
 * Eliminar un tópico</br>
 
 Es lo que conocemos comúnmente como CRUD (CREATE, READ, UPDATE, DELETE).</br>
-
 Al final de nuestro desarrollo tendremos una API REST con las siguientes 
 funcionalidades:</br>
-
 API con rutas implementadas siguiendo las mejores prácticas del modelo REST;</br>
 Validaciones realizadas según reglas de negocio;</br>
 Implementación de una base de datos para la persistencia de la información;</br>
 Servicio de autenticación/autorización para restringir el acceso a la información.<br/>
 
-<h2>Como usar la API</h2> 
-</br> 
-[Inicio](#inicio)
-</br>
+<h2>Como usar la API</h2> </br>
 <h3>Generar token al Inicio de Sesion</h3>. <br/>
 <h3>Autorización</h3> 
 </br>
 <STRONG>{POST} http://localhost:8080/login</STRONG>
 </br>
-![Autorización](./src/main/assets/0_crear_token_inico_sesion.png) 
+![Autorización](/src/main/assets/0_crear_token_inico_sesion.png) 
 </br>
-[Inicio](#inicio)
-</br>
-
 <h2>Registrar usuarios desde MYSQL</h2>
 </br>
 <STRONG>{POST} http://localhost:8080/topicos</STRONG>
 </br>
 ![grabar usuarios](/src/main/assets/8_grabar_usuarios.png)
-</br>
-[Inicio](#inicio)
 </br>
 Entre a:
 ```
@@ -113,17 +102,14 @@ INSERT INTO `usuarios` VALUES (2,'nombre usuario 2','maria.apellido@voll.med','$
 Primero generar token en Autorización, luego busque BASE ENVIRONMENT
 cree una variable "bearer":"aqui coloque el token generado"
 </br>
-```commandline
-[POST] http://localhost:8080/login
-```
+<STRONG>{POST} http://localhost:8080/login</STRONG>
+</br>
 ![grabar token](/src/main/assets/1_grabar_token_env_insomnia.png)
 </br>
-[Inicio](#inicio)
 
 <h2>Grabar variable ambiente en Insominia</h2> </br>
 ![token](/src/main/assets/3_insertar_var_en_los_request.png)
 </br>
-[Inicio](#inicio)
 
 <h2>Registrar topicos</h2>
 </br>
@@ -131,7 +117,6 @@ cree una variable "bearer":"aqui coloque el token generado"
 </br>
 ![registrar topicos](/src/main/assets/2_registrar_topico.png)
 </br>
-[Inicio](#inicio)
 
 <h2>Lista de Topicos</h2> </br>
 </br>
@@ -139,16 +124,15 @@ cree una variable "bearer":"aqui coloque el token generado"
 </br>
 ![Lista topicos](/src/main/assets/6_lista_de_topicos.png)
 </br>
-[Inicio](#inicio)
 
 <h2>Detalle de un topico</h2> </br>
 </br>
 <STRONG>{GET} http://localhost:8080/topicos/2</STRONG>
 </br>
-Para este caso esta listando el topico con id=2 </br>
+Para este caso esta listando el topico con id=2 
+</br>
 ![Lista topicos](/src/main/assets/5_listar_un_topico.png)
 </br>
-[Inicio](#inicio)
 
 <h2>Eliminar un topico</h2> </br>
 </br>
@@ -157,15 +141,14 @@ Para este caso esta listando el topico con id=2 </br>
 Elimina el topico con id=3 </br>
 ![Eliminar un  topico](/src/main/assets/4_elimina_registro_2.png)
 </br>
-[Inicio](#inicio)
 
 <h2>Recuperar topico borrado</h2> </br>
 </br>
 <STRONG>{PUT} http://localhost:8080/topicos/recupera/2</STRONG>
 </br>
-Recupera por borrado logico, el id=2 de topicos
+Recupera por borrado logico, el id=2 de topicos 
+</br>
 ![recuperar topico](/src/main/assets/9_recuperar_registro.png)
-[Inicio](#inicio)
 
 <h2>Actualizar topicos</h2> </br>
 </br>
@@ -183,9 +166,7 @@ Para este ejemplo edita y actualiza el topico con id=4 </br>
 - Trello (planeador de actividades a seguir de un proyecto) <br/>
 - De Manejador de base de datos, MYSQL WORKBENCH <br/>
 - Administrador de bases de datos, MYSQL COMMAND LINE CLIENT<br/>
-
 </br>
-[Inicio](#inicio)
 
 <h2>Personas o entidades contribuyentes en el Proyecto</h2>
 - Alura LATAM, ONE(Oracle Next Education) <br/>
@@ -197,6 +178,3 @@ Para este ejemplo edita y actualiza el topico con id=4 </br>
 - René Avila Alonso. <br/>
 - Desarrollador BackEnd <br/>
 - July, 2025. </br>
-  </br>
-</br>
-[Inicio](#inicio)
