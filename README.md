@@ -108,7 +108,7 @@ INSERT INTO `usuarios` VALUES (2,'nombre usuario 2','maria.apellido@voll.med','$
 [Inicio](#Inicio)
 
 <h2>Lista de Topicos</h2>
-![Lista topicos](/src/main/assets/06_lista_pagina_0_de_topicos.png)
+![Lista topicos](/src/main/assets/06_lista_de_topicos.png)
 </br>
 
 [Inicio](#Inicio)
