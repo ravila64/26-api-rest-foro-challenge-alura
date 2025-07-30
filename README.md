@@ -103,6 +103,9 @@ INSERT INTO `usuarios` VALUES (2,'nombre usuario 2','maria.apellido@voll.med','$
 ```
 <h2>Grabar token en insomnia</h2>
 </br>
+```commandline
+[POST] http://localhost:8080/login
+```
 ![grabar token]({{site.baseurl}}/src/main/assets/1_grabar_token_env_insomnia.png)
 </br>
 <img src="/src/main/assets/1_grabar_token_env_insomnia.png" alt=""/>
@@ -110,40 +113,60 @@ INSERT INTO `usuarios` VALUES (2,'nombre usuario 2','maria.apellido@voll.med','$
 [Inicio](#inicio)
 
 <h2>Grabar variable ambiente en Insominia</h2> </br>
+```commandline
+[POST] http://localhost:8080/topicos
+```
 ![token](/src/main/assets/3_insertar_var_en_los_request.png)
 </br>
 [Inicio](#inicio)
 
 <h2>Registrar topicos</h2> </br>
+```commandline
+[POST] http://localhost:8080/topicos
+```
 ![registrar topicos](/src/main/assets/2_registrar_topico.png)
 </br>
 [Inicio](#inicio)
 
 <h2>Lista de Topicos</h2> </br>
+```commandline
+[GET] http://localhost:8080/topicos
+```
 ![Lista topicos](/src/main/assets/6_lista_de_topicos.png)
 </br>
 [Inicio](#inicio)
 
 <h2>Detalle de un topico</h2> </br>
+```commandline
+[GET] http://localhost:8080/topicos/2
+```
+Para este caso esta listando el topico con id=2 </br>
 ![Lista topicos](/src/main/assets/5_listar_un_topico.png)
 </br>
 [Inicio](#inicio)
 
 <h2>Eliminar un topico</h2> </br>
+```commandline
+[DELETE] http://localhost:8080/topicos/3
+```
+Elimina el topico coon id=3 </br>
 ![Eliminar un  topico](/src/main/assets/4_elimina_registro_2.png)
 </br>
 [Inicio](#inicio)
 
-<h2>Recuperar topico borrado</h2> 
-</br>
+<h2>Recuperar topico borrado</h2> </br>
+```commandline
+[PUT] http://localhost:8080/topicos/recupera/2
+```
+Recupera por borrado logico, el id=2 de topicos
 ![recuperar topico](/src/main/assets/9_recuperar_registro.png)
 [Inicio](#inicio)
 
-<h2>listar un topico elminado</h2>
-</br>
-![listar topico eliminado](/src/main/assets/7_listar_un_topico_eliminado.png)
-</br>
-[Inicio](#inicio)
+<h2>Actualizar topicos</h2> </br>
+```commandline
+[PUT] http://localhost:8080/topicos/4
+```
+Para este ejemplo edita y actualiza el topico con id=4 </br>
 
 <h2>Tecnologías utilizadas</h2>
 - Java, sprint boot<br/>
