@@ -1,7 +1,7 @@
 # Challenge Foro Alura by Rene Avila Alonso
 Proyecto desarrollado durante el curso de la formación Avanzando con Java de Alura
 para BackEnd
-<h2>#Inicio</h2>
+<h2>Inicio</h2>
 
 [Descripción proyecto](#descripción-proyecto) <br/>
 [Como usar la API](#como-usar-la-api) <br/>
@@ -66,16 +66,16 @@ Implementación de una base de datos para la persistencia de la información;</b
 Servicio de autenticación/autorización para restringir el acceso a la información.<br/>
 
 <h2>Como usar la API</h2> <br/> 
-
+[Inicio](#inicio)
 Generar token al Inicio de Sesion. <br/>
 <h3>Autorización</h3>
 
 ![Autorización](/src/main/assets/0_crear_token_inico_sesion.png)
-
+[Inicio](#inicio)
 <h2>Registrar usuarios desde MYSQL</h2>
 
 ![grabar usuarios](/src/main/assets/8_grabar_usuarios.png)
-
+[Inicio](#inicio)
 Entre a:
 ```
 https://bcrypt-generator.com/
