@@ -1,7 +1,7 @@
 # Challenge Foro Alura by Rene Avila Alonso
 Proyecto desarrollado durante el curso de la formación Avanzando con Java de Alura
 para BackEnd
-<h2>Inicio</h2>
+<h2>#Inicio</h2>
 
 [Descripción proyecto](#descripción-proyecto) <br/>
 [Como usar la API](#como-usar-la-api) <br/>
