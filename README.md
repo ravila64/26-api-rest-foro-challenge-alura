@@ -11,6 +11,7 @@ para BackEnd
 1. [Autorización](#autorización)
 2. [Registrar usuarios desde MYSQL](#registrar-usuarios-desde-MYSQL)
 3. [Registrar topicos](#registrar-topicos)
+4. [Grabar variable ambiente en Insominia](#grabar-variable-ambiente-en-insominia)
 4. [Lista de topicos](#lista-de-topicos)
 5. [Detalle de un topico](#detalle-de-un-topico)
 6. [Eliminar un topcio](#eliminar-un-topico)
@@ -100,6 +101,10 @@ INSERT INTO `usuarios` VALUES (2,'nombre usuario 2','maria.apellido@voll.med','$
 
 ![token](/src/main/assets/1_grabar_token_env_insomnia.png)
 </br>
+[Inicio](#Inicio)
+
+<h2>Grabar variable ambiente en Insominia</h2>
+![token](/src/main/assets/3_insertar_var_en_los_request.png)
 [Inicio](#Inicio)
 
 <h2>Registrar topicos</h2>
