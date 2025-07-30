@@ -13,9 +13,9 @@ para BackEnd
 3. [Registrar topicos](#registrar-topicos)
 4. [Lista de topicos](#lista-de-topicos)
 5. [Detalle de un topico](#detalle-de-un-topico)
-5. [Eliminar un topcio](#eliminar-un-topico)
-6. [Recuperar topico borrado](#recuperar-topico-borrado)
-7. [Actualizar topicos](#actualizar-topicos)
+6. [Eliminar un topcio](#eliminar-un-topico)
+7. [Recuperar topico borrado](#recuperar-topico-borrado)
+8. [Actualizar topicos](#actualizar-topicos)
 
 <h2>**26-API REST FORO CHALLENGE ALURA**</h2>
 
@@ -68,11 +68,12 @@ Servicio de autenticación/autorización para restringir el acceso a la informac
 Generar token al Inicio de Sesion. <br/>
 <h3>Autorización</h3>
 
-![Autorización](/src/main/assets/00_crear_token_inico_sesion.png)
+![Autorización](/src/main/assets/0_crear_token_inico_sesion.png)
 
 <h2>Registrar usuarios desde MYSQL</h2>
 
-![grabar usuarios](/src/main/assets/08_grabar_usuarios.png)
+![grabar usuarios](/src/main/assets/8_grabar_usuarios.png)
+
 Entre a:
 ```
 https://bcrypt-generator.com/
@@ -96,45 +97,39 @@ INSERT INTO `usuarios` VALUES (1,'nombre usuario 1','pedro.usuario@foro.alu','$2
 INSERT INTO `usuarios` VALUES (2,'nombre usuario 2','maria.apellido@voll.med','$2y$10$IJdVIrFRyH88UK1XiuPQbuSxMBFb1Pg7z54jTNtXZwtuYnqW10eQq',1);
 ```
 <h2>Grabar token en insomnia</h2>
-![token](/src/main/assets/01_grabar_token_env_insomnia.png)
-</br>
 
+![token](/src/main/assets/1_grabar_token_env_insomnia.png)
+</br>
 [Inicio](#Inicio)
 
 <h2>Registrar topicos</h2>
-![registrar topicos](/src/main/assets/02_registrar_topico.png)
+![registrar topicos](/src/main/assets/2_registrar_topico.png)
 </br>
-
 [Inicio](#Inicio)
 
 <h2>Lista de Topicos</h2>
-![Lista topicos](/src/main/assets/06_lista_de_topicos.png)
+![Lista topicos](/src/main/assets/6_lista_de_topicos.png)
 </br>
-
 [Inicio](#Inicio)
 
 <h2>Detalle de un topico</h2>
-![Lista topicos](/src/main/assets/05_Listar_un_topico.png)
+![Lista topicos](/src/main/assets/5_listar_un_topico.png)
 </br>
-
 [Inicio](#Inicio)
 
 <h2>Eliminar un topico</h2>
-![Lista topicos](/src/main/assets/04_Elimina_registro_2.png)
+![Eliminar un  topico](/src/main/assets/4_elimina_registro_2.png)
 </br>
-
 [Inicio](#Inicio)
 
 <h2>Recuperar topico borrado</h2>
 </br>
-![recuperar topico](/src/main/assets/09_recuperar_registro.png)
-
+![recuperar topico](/src/main/assets/9_recuperar_registro.png)
 [Inicio](#Inicio)
 
 <h2>listar un topico elminado</h2>
 </br>
-![listar topico eliminado](/src/main/assets/07_Listar_un_topico_eliminado.png)
-
+![listar topico eliminado](/src/main/assets/7_listar_un_topico_eliminado.png)
 [Inicio](#Inicio)
 
 <h2>Tecnologías utilizadas</h2>
