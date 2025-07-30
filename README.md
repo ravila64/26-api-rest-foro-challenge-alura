@@ -69,13 +69,14 @@ Servicio de autenticación/autorización para restringir el acceso a la informac
 [Inicio](#inicio)
 Generar token al Inicio de Sesion. <br/>
 <h3>Autorización</h3>
-
 ![Autorización](/src/main/assets/0_crear_token_inico_sesion.png)
 [Inicio](#inicio)
-<h2>Registrar usuarios desde MYSQL</h2>
+/br>
 
+<h2>Registrar usuarios desde MYSQL</h2>
 ![grabar usuarios](/src/main/assets/8_grabar_usuarios.png)
 [Inicio](#inicio)
+</br>
 Entre a:
 ```
 https://bcrypt-generator.com/
@@ -101,41 +102,42 @@ INSERT INTO `usuarios` VALUES (2,'nombre usuario 2','maria.apellido@voll.med','$
 <h2>Grabar token en insomnia</h2>
 ![1_grabar_token_env_insomnia.png](/src/main/assets/1_grabar_token_env_insomnia.png)
 </br>
-[Inicio](#Inicio)
+[Inicio](#inicio)
 
 <h2>Grabar variable ambiente en Insominia</h2>
 ![token](/src/main/assets/3_insertar_var_en_los_request.png)
-[Inicio](#Inicio)
+[Inicio](#inicio)
 
 <h2>Registrar topicos</h2>
 ![registrar topicos](/src/main/assets/2_registrar_topico.png)
 </br>
-[Inicio](#Inicio)
+[Inicio](#inicio)
 
 <h2>Lista de Topicos</h2>
 ![Lista topicos](/src/main/assets/6_lista_de_topicos.png)
 </br>
-[Inicio](#Inicio)
+[Inicio](#inicio)
 
 <h2>Detalle de un topico</h2>
 ![Lista topicos](/src/main/assets/5_listar_un_topico.png)
 </br>
-[Inicio](#Inicio)
+[Inicio](#inicio)
 
 <h2>Eliminar un topico</h2>
 ![Eliminar un  topico](/src/main/assets/4_elimina_registro_2.png)
 </br>
-[Inicio](#Inicio)
+[Inicio](#inicio)
 
 <h2>Recuperar topico borrado</h2>
 </br>
 ![recuperar topico](/src/main/assets/9_recuperar_registro.png)
-[Inicio](#Inicio)
+[Inicio](#inicio)
 
 <h2>listar un topico elminado</h2>
 </br>
 ![listar topico eliminado](/src/main/assets/7_listar_un_topico_eliminado.png)
-[Inicio](#Inicio)
+</br>
+[Inicio](#inicio)
 
 <h2>Tecnologías utilizadas</h2>
 - Java, sprint boot<br/>
@@ -148,7 +150,8 @@ INSERT INTO `usuarios` VALUES (2,'nombre usuario 2','maria.apellido@voll.med','$
 - De Manejador de base de datos, MYSQL WORKBENCH <br/>
 - Administrador de bases de datos, MYSQL COMMAND LINE CLIENT<br/>
 
-[Inicio](#Inicio)
+</br>
+[Inicio](#inicio)
 
 <h2>Personas o entidades contribuyentes en el Proyecto</h2>
 - Alura LATAM, ONE(Oracle Next Education) <br/>
@@ -161,4 +164,5 @@ INSERT INTO `usuarios` VALUES (2,'nombre usuario 2','maria.apellido@voll.med','$
 - Desarrollador BackEnd <br/>
 - July, 2025. </br>
   </br>
-  [Inicio](#Inicio)
+</br>
+[Inicio](#inicio)
