@@ -97,12 +97,12 @@ INSERT INTO `usuarios` VALUES (1,'nombre usuario 1','pedro.usuario@foro.alu','$2
 INSERT INTO `usuarios` VALUES (2,'nombre usuario 2','maria.apellido@voll.med','$2y$10$IJdVIrFRyH88UK1XiuPQbuSxMBFb1Pg7z54jTNtXZwtuYnqW10eQq',1);
 ```
 <h2>Grabar token en insomnia</h2>
-![1_grabar_token_env_insomnia.png](/src/main/assets/1_grabar_token_env_insomnia.png)
+![1_grabar_token_env_insomnia.png](/src/blob/main/assets/1_grabar_token_env_insomnia.png)
 </br>
 [Inicio](#Inicio)
 
 <h2>Registrar topicos</h2>
-![registrar topicos](/src/main/assets/2_registrar_topico.png)
+![registrar topicos](/src/blob/main/assets/2_registrar_topico.png)
 </br>
 [Inicio](#Inicio)
 
