@@ -145,7 +145,7 @@ Recupera por borrado logico, el id=2 de topicos
 ![recuperar topico](/src/main/assets/9_recuperar_registro.png)
 <h2>Actualizar topicos</h2> </br>
 </br>
-<STRONG>{PUT} http://localhost:8080/topicos/4</STRONG>
+<STRONG>{PATCH} http://localhost:8080/topicos/4</STRONG>
 </br>
 Para este ejemplo edita y actualiza el topico con id=4 </br>
 <h2>Tecnologías utilizadas</h2>
