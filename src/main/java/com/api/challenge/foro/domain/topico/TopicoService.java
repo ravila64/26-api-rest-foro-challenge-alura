@@ -16,8 +16,8 @@ public class TopicoService {
    private TopicoRepository topicoRepository;
    @Autowired
    private UsuarioRepository usuarioRepository;
-   @Autowired
-   private  Topico topico;
+//   @Autowired
+//   private  Topico topico;
 
    public DatosRespuestaTopico topicoCreado(DatosRegistroTopico datosDTO){
 
@@ -41,9 +41,9 @@ public class TopicoService {
    }
 
    // Actualizar topico
-   @Transactional
-   public DatosRespuestaTopico actualizarTopico(DatosActualizarTopico datosDTO) {
-     Topico topicoActualizado = topico.actualizarDatos(datosDTO);
-     return new DatosRespuestaTopico(topicoActualizado);
-   }
+//   @Transactional
+//   public DatosRespuestaTopico actualizarTopico(DatosActualizarTopico datosDTO) {
+//     Topico topicoActualizado = topico.actualizarDatos(datosDTO);
+//     return new DatosRespuestaTopico(topicoActualizado);
+//   }
 }

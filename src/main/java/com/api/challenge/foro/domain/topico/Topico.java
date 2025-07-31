@@ -2,15 +2,11 @@ package com.api.challenge.foro.domain.topico;
 
 import com.api.challenge.foro.domain.ValidacionException;
 import com.api.challenge.foro.domain.usuario.Usuario;
-import com.api.challenge.foro.domain.usuario.UsuarioRepository;
-import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import java.time.LocalDateTime;
 
@@ -62,8 +58,6 @@ public class Topico {
    // actualizar datos
    public Topico actualizarDatos(DatosActualizarTopico datosActualizarTopico) {
 
-//      UsuarioRepository repository = null;
-
       var str = "";
       if (datosActualizarTopico.titulo() != null) {
          this.titulo = datosActualizarTopico.titulo();
@@ -82,12 +76,6 @@ public class Topico {
          this.status = datosActualizarTopico.status();
          str = str + "-Status ";
       }
-
-//      Long id = datosActualizarTopico.autor().getId();
-//      if(id != null) {
-//         this.autor = repository.findById(id).get();
-//         str = str + "-Usuario ";
-//      }
 
       if (datosActualizarTopico.curso() != null) {
          this.curso = datosActualizarTopico.curso();

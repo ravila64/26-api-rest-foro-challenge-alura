@@ -40,14 +40,14 @@ public class TopicoController {
       return ResponseEntity.ok(topicoRepository.findByActivoTrue(paginacion).map(DatosListadoTopico::new));
    }
 
-   @PutMapping("/{id}")
-   @Transactional
-   public ResponseEntity actualizarTopico(@PathVariable long id, @RequestBody DatosActualizarTopico actualiza) {
-      var topico = topicoRepository.getReferenceById(id);
-      System.out.println("actualiza "+actualiza);
-      DatosRespuestaTopico respuesta = topicoService.actualizarTopico(actualiza);
-      return ResponseEntity.ok(respuesta);
-   }
+//   @PutMapping("/{id}")
+//   @Transactional
+//   public ResponseEntity actualizarTopico(@PathVariable long id, @RequestBody DatosActualizarTopico actualiza) {
+//      var topico = topicoRepository.getReferenceById(id);
+//      System.out.println("actualiza "+actualiza);
+//      DatosRespuestaTopico respuesta = topicoService.actualizarTopico(actualiza);
+//      return ResponseEntity.ok(respuesta);
+//   }
 
    // Delete logico
    @DeleteMapping("/{id}")
