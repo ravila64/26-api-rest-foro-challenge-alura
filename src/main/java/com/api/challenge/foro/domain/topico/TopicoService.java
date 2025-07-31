@@ -2,13 +2,8 @@ package com.api.challenge.foro.domain.topico;
 
 import com.api.challenge.foro.domain.ValidacionException;
 import com.api.challenge.foro.domain.usuario.UsuarioRepository;
-import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PathVariable;
-
-import java.time.LocalDateTime;
-import java.util.Optional;
 
 @Service
 public class TopicoService {
@@ -16,8 +11,6 @@ public class TopicoService {
    private TopicoRepository topicoRepository;
    @Autowired
    private UsuarioRepository usuarioRepository;
-//   @Autowired
-//   private  Topico topico;
 
    public DatosRespuestaTopico topicoCreado(DatosRegistroTopico datosDTO){
 
@@ -41,6 +34,19 @@ public class TopicoService {
    }
 
    // Actualizar topico
+   public Topico actualizarTopico(Long id, DatosActualizarTopico datos) {
+      Topico topico = topicoRepository.findById(id)
+            .orElseThrow(() -> new RuntimeException("Tópico no encontrado"));
+
+      if (datos.titulo()!=null && !datos.titulo().isBlank()) topico.setTitulo(datos.titulo());
+      if (datos.mensaje() != null && !datos.mensaje().isBlank()) topico.setMensaje(datos.mensaje());
+      if (datos.fecha() != null) topico.setFecha(datos.fecha());
+      if (datos.status() != null) topico.setStatus(datos.status());
+      if (datos.curso() != null) topico.setCurso(datos.curso());
+
+      return topicoRepository.save(topico);
+   }
+
 //   @Transactional
 //   public DatosRespuestaTopico actualizarTopico(DatosActualizarTopico datosDTO) {
 //     Topico topicoActualizado = topico.actualizarDatos(datosDTO);

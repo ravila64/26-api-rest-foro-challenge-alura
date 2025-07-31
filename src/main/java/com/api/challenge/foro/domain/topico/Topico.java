@@ -31,6 +31,46 @@ public class Topico {
    private String curso;
    private boolean activo;
 
+   //setters
+
+   public void setActivo(boolean activo) {
+      this.activo = activo;
+   }
+
+   public void setTitulo(String titulo) {
+      this.titulo = titulo;
+   }
+
+   public void setMensaje(String mensaje) {
+      this.mensaje = mensaje;
+   }
+
+   public void setFecha(LocalDateTime fecha) {
+      this.fecha = fecha;
+   }
+
+   public void setStatus(Status status) {
+      this.status = status;
+   }
+
+   public void setCurso(String curso) {
+      this.curso = curso;
+   }
+
+//   public Topico actualizar(Long id, ActualizacionTopicoDTO datos) {
+//      Topico topico = topicoRepository.findById(id)
+//            .orElseThrow(() -> new RuntimeException("Tópico no encontrado"));
+//
+//      if (datos.getTitulo() != null) topico.setTitulo(datos.getTitulo());
+//      if (datos.getMensaje() != null) topico.setMensaje(datos.getMensaje());
+//      if (datos.getFecha() != null) topico.setFecha(datos.getFecha());
+//      if (datos.getStatus() != null) topico.setStatus(datos.getStatus());
+//      if (datos.getCurso() != null) topico.setCurso(datos.getCurso());
+//      if (datos.getActivo() != null) topico.setActivo(datos.getActivo());
+//
+//      return topicoRepository.save(topico);
+//   }
+
    public Topico(DatosRegistroTopico datos) {
       this.id = null;
       this.titulo = datos.titulo();

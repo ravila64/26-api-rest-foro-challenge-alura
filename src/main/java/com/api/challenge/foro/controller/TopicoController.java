@@ -4,16 +4,12 @@ import com.api.challenge.foro.domain.ValidacionException;
 import com.api.challenge.foro.domain.topico.*;
 import com.api.challenge.foro.domain.usuario.UsuarioRepository;
 import jakarta.transaction.Transactional;
-import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.util.UriComponentsBuilder;
-
-import java.net.URI;
 import java.util.Optional;
 
 @RestController
@@ -40,14 +36,11 @@ public class TopicoController {
       return ResponseEntity.ok(topicoRepository.findByActivoTrue(paginacion).map(DatosListadoTopico::new));
    }
 
-//   @PutMapping("/{id}")
-//   @Transactional
-//   public ResponseEntity actualizarTopico(@PathVariable long id, @RequestBody DatosActualizarTopico actualiza) {
-//      var topico = topicoRepository.getReferenceById(id);
-//      System.out.println("actualiza "+actualiza);
-//      DatosRespuestaTopico respuesta = topicoService.actualizarTopico(actualiza);
-//      return ResponseEntity.ok(respuesta);
-//   }
+   @PatchMapping("/{id}")
+   public ResponseEntity<?> actualizar(@PathVariable Long id, @RequestBody DatosActualizarTopico datos) {
+      Topico actualizado = topicoService.actualizarTopico(id, datos);
+      return ResponseEntity.ok(actualizado);
+   }
 
    // Delete logico
    @DeleteMapping("/{id}")
