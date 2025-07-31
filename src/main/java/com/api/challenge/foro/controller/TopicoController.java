@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import java.net.URI;
+import java.util.Optional;
 
 @RestController
 @ResponseBody
@@ -39,23 +40,13 @@ public class TopicoController {
       return ResponseEntity.ok(topicoRepository.findByActivoTrue(paginacion).map(DatosListadoTopico::new));
    }
 
-//   // Actualizar un topico
-//   @PutMapping("/{id}")
-//   @Transactional
-//   public ResponseEntity actualizarTopico(@RequestBody @PathVariable long id) {
-//      DatosActualizarTopico datos = topicoRepository.getReferenceById(id);
-//      topico.actualizarDatos(datos);
-//      return ResponseEntity.ok(new DatosRespuestaTopico(datos.getId(), datos.getTitulo(), datos.getMensaje(),
-//            datos.getFecha(), datos.getStatus(), datos.getAutor().getId(), datos.getCurso(),
-//            datos.isActivo()));
-//   }
-//   public ResponseEntity actualizarTopico(@RequestBody @Valid DatosActualizarTopico datosActualizarTopico) {
-//      Topico topico = topicoRepository.getReferenceById(datosActualizarTopico.id());
-//      topico.actualizarDatos(datosActualizarTopico);
-//      return ResponseEntity.ok(new DatosRespuestaTopico(topico.getId(), topico.getTitulo(), topico.getMensaje(),
-//            topico.getFecha(), topico.getStatus(), topico.getAutor().getId(), topico.getCurso(),
-//            topico.isActivo()));
-//   }
+   @PutMapping("/{id}")
+   @Transactional
+   public ResponseEntity actualizarTopico(@PathVariable long id, @RequestBody DatosActualizarTopico actualiza) {
+      var topico = topicoRepository.getReferenceById(id);
+      DatosRespuestaTopico respuesta = topicoService.actualizarTopico(actualiza);
+      return ResponseEntity.ok(respuesta);
+   }
 
    // Delete logico
    @DeleteMapping("/{id}")
@@ -78,9 +69,13 @@ public class TopicoController {
    // Muestra datos de un solo topico
    @GetMapping("/{id}")
    public ResponseEntity<DatosRespuestaTopico> retornaDatosTopico(@PathVariable Long id) {
-      Topico topico = topicoRepository.getReferenceById(id);
-      var datosTopico = new DatosRespuestaTopico(topico.getId(), topico.getTitulo(), topico.getMensaje(),
-            topico.getFecha(), topico.getStatus(), topico.getAutor().getId(), topico.getCurso(), true);
+      Optional<Topico> topico = topicoRepository.findById(id);
+      if (!topico.isEmpty()) {
+         throw new ValidacionException("Este id="+id+" de topico no existe !!!");
+      }
+      var datos = topico.get();
+      var datosTopico = new DatosRespuestaTopico(datos.getId(), datos.getTitulo(), datos.getMensaje(),
+            datos.getFecha(), datos.getStatus(), datos.getAutor().getId(), datos.getCurso(), true);
       return ResponseEntity.ok(datosTopico);
    }
 

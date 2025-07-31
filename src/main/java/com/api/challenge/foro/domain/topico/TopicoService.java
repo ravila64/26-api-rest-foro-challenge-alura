@@ -17,7 +17,6 @@ public class TopicoService {
    private UsuarioRepository usuarioRepository;
 
    public DatosRespuestaTopico topicoCreado(DatosRegistroTopico datosDTO){
-      //Optional isAutorId =usuarioRepository.findById(datosDTO.autor().getId());
 
       var usuario = usuarioRepository.findById(datosDTO.autor().getId())
             .orElseThrow(() -> new ValidacionException("ID de usuario no está registrado en la base de datos."));
@@ -31,7 +30,7 @@ public class TopicoService {
       if (!mensaje.isBlank() && topicoRepository.existsByMensajeIgnoreCase(mensaje)){
          throw new ValidacionException("Este mensaje ya está existe en base de datos. Revisar topicos" );
       }
-      //var usuario = usuarioRepository.findById(datosDTO.autor().getId()).get();
+
       var topicoNuevo= new Topico(null, titulo, mensaje, datosDTO.fecha(),
                         datosDTO.status(), usuario, datosDTO.curso(), true);
       topicoRepository.save(topicoNuevo);
@@ -40,19 +39,31 @@ public class TopicoService {
 
    // Actualizar topico
    @Transactional
-   // DatosRespuestaTopico actualizarTopico(DatosActualizarTopico datos)
-   public Topico actualizarTopico(Topico datos) {
-          //datos.actualizarDatos(DatosActualizarTopico datos);   // estaba topico
-   return datos;
-//      return new DatosRespuestaTopico(
-//            datos.getId(),
-//            datos.getTitulo(),
-//            datos.getMensaje(),
-//            datos.getFecha(),
-//            datos.getStatus(),
-//            datos.getAutor().getId(),
-//            datos.getCurso(),
-//            datos.isActivo()
-//      );
+   public DatosRespuestaTopico actualizarTopico(DatosActualizarTopico datosDTO) {
+
+      var usuario = usuarioRepository.findById(datosDTO.autor_id())
+            .orElseThrow(() -> new ValidacionException("ID de usuario no está registrado en la base de datos."));
+
+      var titulo= datosDTO.titulo().trim();
+      if (!titulo.isBlank() && topicoRepository.existsByTituloIgnoreCase(titulo)) {
+         throw new ValidacionException("Este título ya está existe en base de datos, Revisar topicos");
+      }
+
+      String mensaje = datosDTO.mensaje().trim();
+      if (!mensaje.isBlank() && topicoRepository.existsByMensajeIgnoreCase(mensaje)){
+         throw new ValidacionException("Este mensaje ya está existe en base de datos. Revisar topicos" );
+      }
+
+      Status status = datosDTO.status();
+
+
+
+      var topicoActualizado = new Topico(null, titulo, mensaje, datosDTO.fecha(),
+            datosDTO.status(), usuario, datosDTO.curso(), true);
+
+      topicoRepository.save(topicoActualizado);
+
+      return new DatosRespuestaTopico(topicoActualizado);
+
    }
 }
