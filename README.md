@@ -106,25 +106,21 @@ cree una variable "bearer":"aqui coloque el token generado"
 </br>
 ![grabar token](/src/main/assets/1_grabar_token_env_insomnia.png)
 </br>
-
 <h2>Grabar variable ambiente en Insominia</h2> </br>
 ![token](/src/main/assets/3_insertar_var_en_los_request.png)
 </br>
-
 <h2>Registrar topicos</h2>
 </br>
 <STRONG>{POST} http://localhost:8080/topicos</STRONG>
 </br>
 ![registrar topicos](/src/main/assets/2_registrar_topico.png)
 </br>
-
 <h2>Lista de Topicos</h2> </br>
 </br>
 <STRONG>{GET} http://localhost:8080/topicos</STRONG>
 </br>
 ![Lista topicos](/src/main/assets/6_lista_de_topicos.png)
 </br>
-
 <h2>Detalle de un topico</h2> </br>
 </br>
 <STRONG>{GET} http://localhost:8080/topicos/2</STRONG>
@@ -133,7 +129,6 @@ Para este caso esta listando el topico con id=2
 </br>
 ![Lista topicos](/src/main/assets/5_listar_un_topico.png)
 </br>
-
 <h2>Eliminar un topico</h2> </br>
 </br>
 <STRONG>{DELETE} http://localhost:8080/topicos/3</STRONG>
@@ -141,7 +136,6 @@ Para este caso esta listando el topico con id=2
 Elimina el topico con id=3 </br>
 ![Eliminar un  topico](/src/main/assets/4_elimina_registro_2.png)
 </br>
-
 <h2>Recuperar topico borrado</h2> </br>
 </br>
 <STRONG>{PUT} http://localhost:8080/topicos/recupera/2</STRONG>
@@ -149,13 +143,11 @@ Elimina el topico con id=3 </br>
 Recupera por borrado logico, el id=2 de topicos 
 </br>
 ![recuperar topico](/src/main/assets/9_recuperar_registro.png)
-
 <h2>Actualizar topicos</h2> </br>
 </br>
 <STRONG>{PUT} http://localhost:8080/topicos/4</STRONG>
 </br>
 Para este ejemplo edita y actualiza el topico con id=4 </br>
-
 <h2>Tecnologías utilizadas</h2>
 - Java, sprint boot<br/>
 - Insomina o Postman  (para hacer las pruebas de la API) <br/>
@@ -167,13 +159,11 @@ Para este ejemplo edita y actualiza el topico con id=4 </br>
 - De Manejador de base de datos, MYSQL WORKBENCH <br/>
 - Administrador de bases de datos, MYSQL COMMAND LINE CLIENT<br/>
 </br>
-
 <h2>Personas o entidades contribuyentes en el Proyecto</h2>
 - Alura LATAM, ONE(Oracle Next Education) <br/>
 - Profesora. Genesys Rondón </br>
 - Profesor. Bruno Dario Fernández Ellerbach <br/>
 - Profesor. Eric Monné Fraga de Oliveira. <br/>
-
 <h2>Desarrolladores del Proyecto</h2>
 - René Avila Alonso. <br/>
 - Desarrollador BackEnd <br/>

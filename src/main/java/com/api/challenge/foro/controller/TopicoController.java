@@ -44,6 +44,7 @@ public class TopicoController {
    @Transactional
    public ResponseEntity actualizarTopico(@PathVariable long id, @RequestBody DatosActualizarTopico actualiza) {
       var topico = topicoRepository.getReferenceById(id);
+      System.out.println("actualiza "+actualiza);
       DatosRespuestaTopico respuesta = topicoService.actualizarTopico(actualiza);
       return ResponseEntity.ok(respuesta);
    }
@@ -70,7 +71,7 @@ public class TopicoController {
    @GetMapping("/{id}")
    public ResponseEntity<DatosRespuestaTopico> retornaDatosTopico(@PathVariable Long id) {
       Optional<Topico> topico = topicoRepository.findById(id);
-      if (!topico.isEmpty()) {
+      if (!topico.isPresent()) {
          throw new ValidacionException("Este id="+id+" de topico no existe !!!");
       }
       var datos = topico.get();
