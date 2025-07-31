@@ -37,6 +37,7 @@ public class TopicoController {
    }
 
    @PatchMapping("/{id}")
+   @Transactional
    public ResponseEntity<?> actualizar(@PathVariable Long id, @RequestBody DatosActualizarTopico datos) {
       Topico actualizado = topicoService.actualizarTopico(id, datos);
       return ResponseEntity.ok(actualizado);
